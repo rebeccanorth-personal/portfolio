@@ -4,16 +4,18 @@ import { motion } from "framer-motion";
 import { experience, about } from "@/lib/content";
 import { useState } from "react";
 
-const typeColors = {
+const typeColors: Record<string, string> = {
   "full-time": "var(--accent)",
   intern: "var(--teal)",
   education: "var(--pink)",
+  project: "#F59E0B",
 };
 
-const typeLabels = {
+const typeLabels: Record<string, string> = {
   "full-time": "Full-time",
   intern: "Internship",
   education: "Education",
+  project: "Project",
 };
 
 export default function About() {

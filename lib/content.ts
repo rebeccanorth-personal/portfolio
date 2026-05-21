@@ -30,6 +30,7 @@ export const about = {
 export const experience = [
   {
     id: "ms-growth",
+    // newest first
     title: "Product Manager 2",
     subtitle: "Subscriber Growth & Lifecycle",
     company: "Microsoft",
@@ -85,6 +86,18 @@ export const experience = [
     type: "intern" as const,
   },
   {
+    id: "romer",
+    title: "Marketing Intern",
+    subtitle: "",
+    company: "Romer",
+    period: "Jan – Jun 2020",
+    location: "Remote",
+    description:
+      "Expanded startup awareness and managed community growth. Shaped brand identity through cross-platform creative content creation.",
+    metrics: [],
+    type: "intern" as const,
+  },
+  {
     id: "sirius",
     title: "Customer Retention Marketing Intern",
     subtitle: "",
@@ -95,6 +108,30 @@ export const experience = [
       "Analyzed user data to develop tactical retention campaigns. Used competitive analysis to surface streaming app improvements.",
     metrics: [],
     type: "intern" as const,
+  },
+  {
+    id: "snap",
+    title: "Product Design Intern",
+    subtitle: "",
+    company: "SNAPWellness",
+    period: "Jun – Aug 2018",
+    location: "New York, NY",
+    description:
+      "Designed the company website and customer database. Created eCommerce additions to expand the platform's commercial capabilities.",
+    metrics: [],
+    type: "intern" as const,
+  },
+  {
+    id: "anabels-exp",
+    title: "Web Developer & Graphic Designer",
+    subtitle: "Anabel's Grocery — Cornell Co-op",
+    company: "Cornell University",
+    period: "2017",
+    location: "Ithaca, NY",
+    description:
+      "Built the website for Cornell's student-run grocery cooperative from design briefs: HTML, CSS, PHP, WordPress, plus a full product inventory list. Designed all branding and print materials in Illustrator and Photoshop.",
+    metrics: [],
+    type: "project" as const,
   },
   {
     id: "cornell",
@@ -157,37 +194,134 @@ export const writing = [
   },
 ];
 
-// ── PM projects ───────────────────────────────────────────────────────────────
-export const pmProjects = [
+// ── All portfolio projects (Professional page) ─────────────────────────────────
+// images: src=null renders a styled placeholder; swap with a real path when ready
+export const allProjects = [
+  {
+    id: "microsoft",
+    name: "Microsoft 365",
+    tagline: "Growth & Acquisition",
+    role: "Product Manager → PM2",
+    company: "Microsoft",
+    period: "2019 – Present",
+    type: "Full-time",
+    accent: "var(--teal)",
+    tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
+    summary:
+      "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure, launched a 0→1 EDU offer, and shipped redesigns that moved subscription numbers by millions.",
+    metrics: [
+      { value: "20%", label: "YoY subscriber growth" },
+      { value: "900K", label: "new subscribers (EDU)" },
+      { value: "7%", label: "MAU growth across Office apps" },
+      { value: "14%", label: "subscription lift via UX" },
+    ],
+    modal: {
+      overview:
+        "M365 Consumer growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior — why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
+      process: [
+        { step: "Ideate", desc: "Identify problems and propose solutions that balance business impact, engineering cost, and user needs — always starting from the user behavior the data surfaces." },
+        { step: "Research", desc: "Conduct user research with target audiences to understand intent and friction points. Pair qual insights with telemetry to prioritize what matters." },
+        { step: "Design", desc: "Apply UX principles to create improvements grounded in customer insight. I wireframe before I spec — it makes the design conversations with engineers much faster." },
+        { step: "Develop", desc: "Lead feature teams through planning and execution. Make sure every dependency is visible and every engineer knows why the feature matters." },
+        { step: "Experiment", desc: "Test features with controlled rollouts, analyze telemetry, and scorecard results against hypothesis. Kill fast. Double down faster." },
+        { step: "Iterate", desc: "Good product is never done. Revisit, retest, and improve — especially on high-traffic surfaces where a 0.5-point conversion lift compounds at scale." },
+      ],
+      images: [
+        { caption: "Windows OOBE — M365 Acquisition Flow", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(155,111,245,0.1))" },
+        { caption: "M365 Offer Page — UX Redesign", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(32,211,234,0.08))" },
+        { caption: "EDU Offer — 0→1 Launch", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
+        { caption: "Experimentation Dashboard", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.15))" },
+      ],
+    },
+  },
   {
     id: "sirius",
-    name: "SiriusXM — Station Schedule Redesign",
+    name: "SiriusXM",
+    tagline: "Station Schedule Redesign",
     role: "Product Designer",
-    type: "Internship project",
-    description:
-      "The customer retention team needed a way for satellite radio listeners to preview station schedules and find when their favorite shows were airing. I created six initial concepts from design briefs, narrowed to two, built a Figma prototype, and presented to the team for a final selection that went to development.",
+    company: "SiriusXM",
+    period: "2018 · Internship",
+    type: "Internship",
+    accent: "var(--accent)",
     tags: ["UX Design", "Figma", "Prototyping"],
-    accent: "var(--teal)",
+    summary:
+      "Designed a website for the Customer Retention team — letting satellite radio listeners preview station schedules and find when their favorite shows air.",
+    metrics: [],
+    modal: {
+      overview:
+        "The Customer Retention Marketing team had a clear need: give listeners a way to preview station schedules so they'd re-engage with content they were already paying for. I took the project from brief to prototype — six directions, two finalists, one shipped design.",
+      process: [
+        { step: "Brief", desc: "Analyzed the design brief to understand the core goal: reduce churn by surfacing content value before a subscriber considers canceling." },
+        { step: "Ideate", desc: "Generated six distinct website directions, each exploring a different content hierarchy and interaction model." },
+        { step: "Narrow", desc: "Evaluated all six against usability principles and business requirements. Reduced to two finalists for team review." },
+        { step: "Prototype", desc: "Built an interactive Figma prototype of the selected direction — screen by screen, interaction by interaction." },
+        { step: "Handoff", desc: "Presented to the team. Design was approved and sent to development." },
+      ],
+      images: [
+        { caption: "Initial Brief Analysis", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.12), rgba(244,114,182,0.08))" },
+        { caption: "Six Initial Directions", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.1))" },
+        { caption: "Two Finalist Concepts", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(244,114,182,0.06))" },
+        { caption: "Final Figma Prototype", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.18), rgba(32,211,234,0.08))" },
+      ],
+    },
   },
   {
     id: "sweat",
     name: "Sweat in the City",
+    tagline: "Travel Fitness Aggregator",
     role: "Product Designer + Developer",
+    company: "Side project",
+    period: "Cornell",
     type: "Side project",
-    description:
-      "When you travel, only big-box gyms show up in search results — every boutique studio and spin class stays invisible. I designed and built a prototype aggregator where travelers can find all local workout options in one place. Design in Sketch, built in HTML, CSS, and JavaScript.",
-    tags: ["Product Design", "Sketch", "HTML/CSS/JS", "PHP"],
     accent: "var(--pink)",
+    tags: ["Product Design", "Sketch", "HTML/CSS/JS"],
+    summary:
+      "When you travel, only big-box gyms show up in search. Every boutique studio and spin class stays invisible. I built the thing I wanted to exist.",
+    metrics: [],
+    modal: {
+      overview:
+        "The problem was personal: I travel and I work out, and finding non-chain fitness options in an unfamiliar city was genuinely painful. I designed and coded a prototype aggregator that surfaces all local workout options in one search — classes, gyms, studios, everything.",
+      process: [
+        { step: "Problem", desc: "Identified the gap through personal experience: major gym chains dominate search results, leaving boutique studios completely invisible to traveling users." },
+        { step: "Design", desc: "Sketched the information architecture and key screens in Sketch. Focused on making search fast and results scannable — you're usually looking on your phone in a hotel." },
+        { step: "Build", desc: "Coded the prototype in HTML, CSS, JavaScript, and PHP. Real enough to demo the full user flow end to end." },
+      ],
+      images: [
+        { caption: "Problem Definition & Research", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(155,111,245,0.08))" },
+        { caption: "Sketch Wireframes", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.1), rgba(32,211,234,0.08))" },
+        { caption: "Coded Prototype", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.15), rgba(155,111,245,0.06))" },
+      ],
+    },
   },
   {
     id: "anabels",
     name: "Anabel's Grocery",
+    tagline: "Website & Brand Identity",
     role: "Developer + Graphic Designer",
+    company: "Cornell",
+    period: "2017",
     type: "Cornell",
-    description:
-      "Cornell's student-run grocery cooperative needed a web presence from scratch. I built the site from design briefs using HTML, CSS, PHP, and WordPress — including a full inventory list so students could check stock before making the trip. Also handled all branding and print materials in Illustrator and Photoshop.",
-    tags: ["Web Development", "WordPress", "Branding", "Illustrator"],
     accent: "#F59E0B",
+    tags: ["Web Dev", "WordPress", "Branding", "Illustrator"],
+    summary:
+      "Cornell's student-run grocery cooperative needed a website and a brand identity from scratch. I built both.",
+    metrics: [],
+    modal: {
+      overview:
+        "Anabel's Grocery opened in September 2017 to give Cornell students access to affordable food on campus. They needed a web presence immediately — and a brand that felt warm, student-made, and trustworthy. I handled the full build: site architecture, WordPress development, inventory system, and all visual identity and print materials.",
+      process: [
+        { step: "Scope", desc: "Identified two core needs: a site students would actually visit to check inventory, and a brand identity that felt authentic to a student-run co-op." },
+        { step: "Brand", desc: "Designed the visual identity in Illustrator — logo, color palette, typography, and tone. Created promotional materials for campus distribution." },
+        { step: "Build", desc: "Coded the website from design briefs using HTML, CSS, PHP on WordPress. Built a full inventory list so students could check stock before making the trip." },
+        { step: "Launch", desc: "Shipped the site at store opening. Built to be maintained by non-technical student staff with minimal ongoing support." },
+      ],
+      images: [
+        { caption: "Brand Identity & Logo", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(155,111,245,0.06))" },
+        { caption: "Website Design", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.1), rgba(32,211,234,0.06))" },
+        { caption: "Inventory System", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.15), rgba(155,111,245,0.04))" },
+        { caption: "Print & Promotional Materials", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(244,114,182,0.06))" },
+      ],
+    },
   },
 ];
 
