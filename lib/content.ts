@@ -42,6 +42,7 @@ export const experience = [
     metrics: [
       { value: "20%", label: "YoY subscriber growth" },
       { value: "900K", label: "new subscribers via EDU offer" },
+      { value: "+200K", label: "trial conversions" },
     ],
     type: "full-time" as const,
   },
@@ -212,9 +213,9 @@ export const allProjects = [
       "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure, launched a 0→1 EDU offer, and shipped redesigns that moved subscription numbers by millions.",
     metrics: [
       { value: "20%", label: "YoY subscriber growth" },
+      { value: "+200K", label: "trial conversions" },
       { value: "900K", label: "new subscribers (EDU)" },
       { value: "7%", label: "MAU growth across Office apps" },
-      { value: "14%", label: "subscription lift via UX" },
     ],
     modal: {
       overview:
