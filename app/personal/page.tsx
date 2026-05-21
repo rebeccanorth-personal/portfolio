@@ -192,8 +192,8 @@ export default function Personal() {
           Built for myself
         </h1>
         <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
-          Side projects I made because I needed them. No agency brief, no sprint planning —
-          just a problem I had and code that solved it.
+          Side projects I made because I needed them — vibe coded with Claude. No agency brief,
+          no sprint planning, just a problem I had and an AI I could build with.
         </p>
       </motion.div>
 

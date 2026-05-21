@@ -22,6 +22,7 @@ export const about = {
     "I'm a PM who can't help but wireframe before I write a spec. Whether that makes me a better product manager or a very confused designer probably depends on the day — but it's meant I ship things that actually look like someone thought about them.",
     "I grew up in Information Science at Cornell, which is a polite way of saying I spent four years arguing about whether good design is discovered or invented. (Still arguing, for the record.)",
     "At Microsoft I found my home in growth: that scrappy, hypothesis-driven corner of product where you're constantly interrogating why users do what they do, then building small experiments that sometimes move enormous numbers. I've grown M365 subscriber counts by millions. I still get unreasonably excited when a conversion rate ticks up by half a point.",
+    "I'm also deeply bought into AI as a way to work — not just as a PM on a Copilot growth team, but personally. I use it to move faster, think through problems, and build things I wouldn't have been able to ship alone. This portfolio is a good example of that.",
     "Outside of work I take improv classes, lift weights, go to music festivals, and take my camera everywhere I travel. I believe the best PMs are relentlessly curious about everything — and I'm still very much proving that theory.",
   ],
 };
@@ -32,7 +33,7 @@ export const experience = [
     id: "ms-growth",
     // newest first
     title: "Product Manager 2",
-    subtitle: "Subscriber Growth & Lifecycle",
+    subtitle: "Consumer Copilot Growth",
     company: "Microsoft",
     period: "May 2025 – Present",
     location: "New York, NY",
@@ -329,7 +330,7 @@ export const allProjects = [
 export const chatSystemPrompt = `You are a friendly assistant on Rebecca North's portfolio website. Answer questions about Rebecca's background, experience, projects, and skills. Be warm, concise, and direct — two to four sentences max unless more detail is genuinely needed.
 
 About Rebecca:
-- Growth Product Manager at Microsoft (PM2 - Subscriber Growth & Lifecycle, May 2025–Present, NYC)
+- Growth Product Manager at Microsoft (PM2 - Consumer Copilot Growth, May 2025–Present, NYC)
 - Previous: PM2 - First Run Experiences at Microsoft (Sep 2022–Apr 2025)
 - Previous: Product Manager at Microsoft (Sep 2020–Aug 2022, Redmond)
 - Internships: Microsoft Program Manager (Summer 2019), SiriusXM Customer Retention (Summer 2018)
