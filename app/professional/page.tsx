@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experience } from "@/lib/content";
+import { experience, pmProjects } from "@/lib/content";
 
 const fullTime = experience.filter((e) => e.type === "full-time");
 
@@ -114,6 +114,77 @@ export default function Professional() {
           </motion.div>
         ))}
       </div>
+
+      {/* PM Projects */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mb-20"
+      >
+        <p
+          className="text-xs font-semibold tracking-widest uppercase mb-2"
+          style={{ color: "var(--muted)" }}
+        >
+          Project work
+        </p>
+        <p className="text-sm mb-8" style={{ color: "var(--muted)" }}>
+          Earlier projects spanning product design, UX, and development.
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+          {pmProjects.map((p, i) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="card p-6 flex flex-col relative overflow-hidden group"
+            >
+              <div
+                className="absolute top-0 left-0 right-0 h-px"
+                style={{ background: `linear-gradient(90deg, ${p.accent}, transparent)` }}
+              />
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <span
+                  className="text-xs px-2 py-0.5 rounded-full font-medium"
+                  style={{
+                    background: `color-mix(in srgb, ${p.accent} 12%, transparent)`,
+                    color: p.accent,
+                    border: `1px solid color-mix(in srgb, ${p.accent} 25%, transparent)`,
+                  }}
+                >
+                  {p.type}
+                </span>
+              </div>
+              <h3 className="font-bold mb-1" style={{ color: "var(--text)" }}>
+                {p.name}
+              </h3>
+              <p className="text-xs font-medium mb-3" style={{ color: p.accent }}>
+                {p.role}
+              </p>
+              <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "var(--muted)" }}>
+                {p.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {p.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-1 rounded-full"
+                    style={{
+                      background: "var(--surface-2)",
+                      border: "1px solid var(--border)",
+                      color: "var(--muted)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Skills */}
       <motion.div

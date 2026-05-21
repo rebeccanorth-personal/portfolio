@@ -27,10 +27,10 @@ export default function Play() {
           className="text-5xl font-extrabold mb-6"
           style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
         >
-          Everything else
+          The rest of me
         </h1>
         <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
-          Writing, travel photography, and the things that aren&apos;t on my resume but are very much a part of how I think.
+          The non-LinkedIn version. I took an improv class and wrote about it. I travel with my camera. I make playlists that are objectively too long. This is that part.
         </p>
       </motion.div>
 
@@ -156,7 +156,7 @@ export default function Play() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Photos coming soon — shot on trips through Europe, Southeast Asia, and beyond.
+          Photos coming soon. I bring a camera everywhere and use it on about 40% of trips. The other 60% I regret immediately.
         </motion.p>
       </section>
     </div>

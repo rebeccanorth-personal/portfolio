@@ -38,49 +38,30 @@ export default function About() {
           className="text-5xl font-extrabold mb-6"
           style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
         >
-          A little about me
+          Hi, I&apos;m Rebecca.
         </h1>
         <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
-          {about.summary}
+          Growth PM at Microsoft. Cornell Information Science. Five years of turning
+          hypotheses into shipped product and watching the numbers move.
         </p>
       </motion.div>
 
       {/* Story */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="mb-20"
-      >
-        <div
-          className="card p-8"
-          style={{ borderLeft: "3px solid var(--accent)" }}
-        >
-          <h2 className="text-xl font-bold mb-4" style={{ color: "var(--text)" }}>
-            My story
-          </h2>
-          <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-            <p>
-              My overarching goal is to create products not only for users but{" "}
-              <em style={{ color: "var(--text)" }}>with</em> users in mind. I design to address
-              real needs and ensure products are accessible for anyone to use with ease and
-              comfort. Human behavior and interaction with technology is always at the forefront
-              of my ideation, design, and creative processes.
-            </p>
-            <p>
-              I graduated from Cornell University with a B.S. in Information Science, concentrating
-              in UX Design. From there I joined Microsoft as a PM intern, then converted full-time —
-              and I've been building growth products ever since. I've shipped experiments that moved
-              needle metrics, launched 0→1 offerings, and built infrastructure that makes the whole
-              team faster.
-            </p>
-            <p>
-              Outside of product work I design, build small tools for my own life, write, and take
-              photos everywhere I travel. I believe nothing worth making is made alone.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+      <div className="mb-20 space-y-4">
+        {about.story.map((para, i) => (
+          <motion.p
+            key={i}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+            className="text-lg leading-relaxed"
+            style={{ color: i === 0 ? "var(--text)" : "var(--muted)" }}
+          >
+            {para}
+          </motion.p>
+        ))}
+      </div>
 
       {/* Timeline */}
       <motion.div

@@ -16,8 +16,14 @@ export const currently = {
 export const about = {
   headline: "Growth PM. Designer. Builder.",
   taglines: ["Growth PM.", "Designer.", "Builder."],
-  bio: "I'm a Product Manager at Microsoft who doesn't just recognize the importance of design — I understand it. I build products with users at the center: accessible, intentional, and grounded in real behavior. With a background in Information Science and UX from Cornell, I move fluidly between engineers, designers, and data scientists to take products from 0 to 1 and from good to great.",
+  bio: "Growth PM at Microsoft who can't help but wireframe before writing a spec. I live in the space where data meets design — running experiments that move subscriber numbers by millions, then going home to build small tools for myself because I genuinely can't stop.",
   summary: "Growth Product Manager with a proven track record of driving acquisition, activation, and retention through data-driven experimentation, PLG strategies, and monetization initiatives. Experienced at scaling subscriber growth in consumer products while building 0→1 offerings, rapid testing frameworks, and optimized user journeys that deliver measurable business impact.",
+  story: [
+    "I'm a PM who can't help but wireframe before I write a spec. Whether that makes me a better product manager or a very confused designer probably depends on the day — but it's meant I ship things that actually look like someone thought about them.",
+    "I grew up in Information Science at Cornell, which is a polite way of saying I spent four years arguing about whether good design is discovered or invented. (Still arguing, for the record.)",
+    "At Microsoft I found my home in growth: that scrappy, hypothesis-driven corner of product where you're constantly interrogating why users do what they do, then building small experiments that sometimes move enormous numbers. I've grown M365 subscriber counts by millions. I still get unreasonably excited when a conversion rate ticks up by half a point.",
+    "Outside of work I take improv classes, lift weights, go to music festivals, and take my camera everywhere I travel. I believe the best PMs are relentlessly curious about everything — and I'm still very much proving that theory.",
+  ],
 };
 
 // ── Experience ─────────────────────────────────────────────────────────────────
@@ -148,6 +154,40 @@ export const writing = [
       "What improv comedy taught me about showing up at work — and why I think everyone should take a class at least once.",
     url: "https://medium.com/@rebeccanorth/yes-and-ing-to-success-2053088b7f7f",
     mediumProfile: "https://medium.com/@rebeccanorth",
+  },
+];
+
+// ── PM projects ───────────────────────────────────────────────────────────────
+export const pmProjects = [
+  {
+    id: "sirius",
+    name: "SiriusXM — Station Schedule Redesign",
+    role: "Product Designer",
+    type: "Internship project",
+    description:
+      "The customer retention team needed a way for satellite radio listeners to preview station schedules and find when their favorite shows were airing. I created six initial concepts from design briefs, narrowed to two, built a Figma prototype, and presented to the team for a final selection that went to development.",
+    tags: ["UX Design", "Figma", "Prototyping"],
+    accent: "var(--teal)",
+  },
+  {
+    id: "sweat",
+    name: "Sweat in the City",
+    role: "Product Designer + Developer",
+    type: "Side project",
+    description:
+      "When you travel, only big-box gyms show up in search results — every boutique studio and spin class stays invisible. I designed and built a prototype aggregator where travelers can find all local workout options in one place. Design in Sketch, built in HTML, CSS, and JavaScript.",
+    tags: ["Product Design", "Sketch", "HTML/CSS/JS", "PHP"],
+    accent: "var(--pink)",
+  },
+  {
+    id: "anabels",
+    name: "Anabel's Grocery",
+    role: "Developer + Graphic Designer",
+    type: "Cornell",
+    description:
+      "Cornell's student-run grocery cooperative needed a web presence from scratch. I built the site from design briefs using HTML, CSS, PHP, and WordPress — including a full inventory list so students could check stock before making the trip. Also handled all branding and print materials in Illustrator and Photoshop.",
+    tags: ["Web Development", "WordPress", "Branding", "Illustrator"],
+    accent: "#F59E0B",
   },
 ];
 

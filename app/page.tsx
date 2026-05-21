@@ -199,40 +199,146 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Section directory */}
+      {/* Section directory — bento layout */}
       <section className="section px-6 max-w-6xl mx-auto">
-        <motion.p
-          className="text-xs font-semibold tracking-widest uppercase mb-8"
-          style={{ color: "var(--muted)" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Explore
-        </motion.p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {sections.map((s, i) => (
+        {/* Top row: Professional (wide) + Personal */}
+        <div className="grid sm:grid-cols-5 gap-3 mb-3">
+          {/* Professional — featured wide */}
+          <motion.div
+            className="sm:col-span-3"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link
+              href="/professional"
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48"
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "radial-gradient(600px at 0% 100%, rgba(32,211,234,0.07), transparent 70%)" }}
+              />
+              <span
+                className="absolute right-6 bottom-4 text-8xl font-black select-none pointer-events-none leading-none"
+                style={{ color: "rgba(32,211,234,0.06)" }}
+              >
+                01
+              </span>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--teal)" }}>
+                Professional
+              </p>
+              <h3 className="text-2xl font-extrabold mb-2" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>
+                Five years at Microsoft.
+              </h3>
+              <p className="text-sm" style={{ color: "var(--muted)" }}>
+                Growth, experimentation, and subscriber numbers in the millions.
+              </p>
+            </Link>
+          </motion.div>
+
+          {/* Personal */}
+          <motion.div
+            className="sm:col-span-2"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+          >
+            <Link
+              href="/personal"
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48"
+              style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+            >
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "radial-gradient(400px at 100% 0%, rgba(244,114,182,0.08), transparent 70%)" }}
+              />
+              <span
+                className="absolute right-6 bottom-4 text-8xl font-black select-none pointer-events-none leading-none"
+                style={{ color: "rgba(244,114,182,0.06)" }}
+              >
+                02
+              </span>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--pink)" }}>
+                Personal
+              </p>
+              <h3 className="text-2xl font-extrabold mb-2" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>
+                Built for myself.
+              </h3>
+              <p className="text-sm" style={{ color: "var(--muted)" }}>
+                Side projects that actually get used.
+              </p>
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Bottom row: About + Graphics + Play */}
+        <div className="grid sm:grid-cols-3 gap-3">
+          {[
+            {
+              href: "/about",
+              num: "03",
+              label: "About",
+              headline: "The full picture.",
+              desc: "Story, background, and timeline.",
+              color: "var(--accent)",
+              glow: "rgba(155,111,245,0.08)",
+            },
+            {
+              href: "/graphics",
+              num: "04",
+              label: "Graphics",
+              headline: "Design work.",
+              desc: "Branding, visual identity, and art.",
+              color: "#F59E0B",
+              glow: "rgba(245,158,11,0.06)",
+            },
+            {
+              href: "/play",
+              num: "05",
+              label: "Play",
+              headline: "The rest of me.",
+              desc: "Writing, travel, and everything else.",
+              color: "#34D399",
+              glow: "rgba(52,211,153,0.07)",
+            },
+          ].map((s, i) => (
             <motion.div
               key={s.href}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <Link href={s.href} className="card block p-6 group h-full">
+              <Link
+                href={s.href}
+                className="block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36"
+                style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+              >
                 <div
-                  className="w-2 h-2 rounded-full mb-4"
-                  style={{ background: s.color }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: `radial-gradient(300px at 0% 100%, ${s.glow}, transparent 70%)` }}
                 />
-                <h3 className="font-bold mb-1" style={{ color: "var(--text)" }}>
+                <span
+                  className="absolute right-4 bottom-3 text-6xl font-black select-none pointer-events-none leading-none"
+                  style={{ color: `color-mix(in srgb, ${s.color} 8%, transparent)` }}
+                >
+                  {s.num}
+                </span>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: s.color }}>
                   {s.label}
+                </p>
+                <h3 className="text-lg font-extrabold mb-1" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>
+                  {s.headline}
                 </h3>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
+                <p className="text-xs" style={{ color: "var(--muted)" }}>
                   {s.desc}
                 </p>
-                <span className="inline-block mt-4 text-xs font-semibold" style={{ color: s.color }}>
-                  View →
-                </span>
               </Link>
             </motion.div>
           ))}
