@@ -1,14 +1,14 @@
 // ── Update these whenever they change ─────────────────────────────────────────
 export const currently = {
   listening: {
-    artist: "Chappell Roan",
-    track: "Pink Pony Club",
-    link: "https://open.spotify.com/artist/7GlBOeep6PqTfFi59PTUUN",
+    artist: "MUNA",
+    track: "Dancing On The Wall",
+    link: "https://open.spotify.com/track/3x4HQHF6oY2yKtIGF2kTJz",
   },
   reading: {
-    title: "The Mom Test",
-    author: "Rob Fitzpatrick",
-    link: "https://www.momtestbook.com",
+    title: "The Rachel Incident",
+    author: "Caroline O'Donoghue",
+    link: "https://www.goodreads.com/book/show/62039271-the-rachel-incident",
   },
 };
 
