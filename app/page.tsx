@@ -207,7 +207,7 @@ export default function Home() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "rgba(155,111,245,0.38)";
                     e.currentTarget.style.borderColor = "rgba(155,111,245,0.9)";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.18), 0 8px 40px rgba(155,111,245,0.55)";
+                    e.currentTarget.style.boxShadow = "0 4px 20px rgba(155,111,245,0.28)";
                     e.currentTarget.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
