@@ -13,7 +13,7 @@ export interface ProjectModalData {
   modal: {
     overview: string;
     process?: { step: string; desc: string }[];
-    images: { caption: string; src: string | null; gradient: string }[];
+    images: { caption: string; src: string | null; gradient: string; position?: string }[];
     metrics?: { value: string; label: string }[];
   };
 }
@@ -95,6 +95,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       src={images[imgIndex].src!}
                       alt={images[imgIndex].caption}
                       className="w-full h-full object-cover"
+                      style={{ objectPosition: images[imgIndex].position ?? "center" }}
                     />
                   ) : (
                     <div className="text-center px-10 select-none">
@@ -127,7 +128,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   <button
                     onClick={prev}
                     disabled={imgIndex === 0}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all disabled:opacity-20"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all disabled:opacity-20 cursor-pointer"
                     style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
                   >
                     ←
@@ -135,7 +136,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   <button
                     onClick={next}
                     disabled={imgIndex === images.length - 1}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all disabled:opacity-20"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all disabled:opacity-20 cursor-pointer"
                     style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
                   >
                     →
@@ -146,7 +147,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       <button
                         key={i}
                         onClick={() => setImgIndex(i)}
-                        className="rounded-full transition-all duration-200"
+                        className="rounded-full transition-all duration-200 cursor-pointer"
                         style={{
                           width: i === imgIndex ? 20 : 6,
                           height: 6,
@@ -161,7 +162,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               {/* Close */}
               <button
                 onClick={close}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
                 style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
               >
                 ✕

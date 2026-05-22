@@ -16,14 +16,14 @@ export const currently = {
 export const about = {
   headline: "Growth PM. Designer. Builder.",
   taglines: ["Growth PM.", "Designer.", "Builder."],
-  bio: "Growth PM at Microsoft who can't help but wireframe before writing a spec. I live in the space where data meets design — running experiments that move subscriber numbers by millions, then going home to build small tools for myself because I genuinely can't stop.",
+  bio: "Growth PM at Microsoft who can't help but prototype before writing a spec. I live in the space where data meets design, running experiments that move subscriber numbers by millions, then going home to build small tools for myself because I genuinely can't stop.",
   summary: "Growth Product Manager with a proven track record of driving acquisition, activation, and retention through data-driven experimentation, PLG strategies, and monetization initiatives. Experienced at scaling subscriber growth in consumer products while building 0→1 offerings, rapid testing frameworks, and optimized user journeys that deliver measurable business impact.",
   story: [
-    "I'm a PM who can't help but wireframe before I write a spec. Whether that makes me a better product manager or a very confused designer probably depends on the day — but it's meant I ship things that actually look like someone thought about them.",
+    "I'm a PM who can't help but prototype before I write a spec. Whether that makes me a better product manager or a very confused designer probably depends on the day, but it's meant I ship things that actually look like someone thought about them.",
     "I grew up in Information Science at Cornell, which is a polite way of saying I spent four years arguing about whether good design is discovered or invented. (Still arguing, for the record.)",
     "At Microsoft I found my home in growth: that scrappy, hypothesis-driven corner of product where you're constantly interrogating why users do what they do, then building small experiments that sometimes move enormous numbers. I've grown M365 subscriber counts by millions. I still get unreasonably excited when a conversion rate ticks up by half a point.",
-    "I'm also deeply bought into AI as a way to work — not just as a PM on a Copilot growth team, but personally. I use it to move faster, think through problems, and build things I wouldn't have been able to ship alone. This portfolio is a good example of that.",
-    "Outside of work I take improv classes, lift weights, go to music festivals, and take my camera everywhere I travel. I believe the best PMs are relentlessly curious about everything — and I'm still very much proving that theory.",
+    "I'm also deeply bought into AI as a way to work, not just as a PM on a Copilot growth team, but personally. I use it to move faster, think through problems, and build things I wouldn't have been able to ship alone. This portfolio is a good example of that.",
+    "Outside of work I travel the world, lift weights, see live music whenever I can, and can never be found without my Kindle. I believe the best PMs are relentlessly curious about everything, and I'm still very much proving that theory.",
   ],
 };
 
@@ -31,7 +31,6 @@ export const about = {
 export const experience = [
   {
     id: "ms-growth",
-    // newest first
     title: "Product Manager 2",
     subtitle: "Consumer Copilot Growth",
     company: "Microsoft",
@@ -126,7 +125,7 @@ export const experience = [
   {
     id: "anabels-exp",
     title: "Web Developer & Graphic Designer",
-    subtitle: "Anabel's Grocery — Cornell Co-op",
+    subtitle: "Anabel's Grocery, Cornell Co-op",
     company: "Cornell University",
     period: "2017",
     location: "Ithaca, NY",
@@ -165,14 +164,14 @@ export const personalProjects = [
     name: "lift + log",
     tagline: "Workout and protein tracking PWA",
     description:
-      "Progressive web app for logging workouts and daily protein intake. Auto-tags sessions by type (Upper Body, Run, HIIT, etc.) and logs to Google Sheets. Vanilla JS, zero dependencies.",
+      "Progressive web app for logging workouts and daily protein intake. Auto-tags sessions by type (Upper Body, Run, HIIT, etc.) and logs to Google Sheets for weekly Claude analysis.",
     tags: ["JavaScript", "PWA", "Google Sheets API"],
     github: "https://github.com/rebeccanorth-personal/lift-and-log",
     live: null,
     accent: "#22D3EE",
   },
   {
-    name: "lolla schedule",
+    name: "Lollapalooza App",
     tagline: "Festival lineup planner with friends",
     description:
       "React app for building your Lollapalooza schedule. Browse the full lineup on a timeline, build your personal picks, coordinate with friends, detect conflicts, and share your schedule via a URL.",
@@ -190,7 +189,7 @@ export const writing = [
     publication: "Medium",
     date: "January 2023",
     excerpt:
-      "What improv comedy taught me about showing up at work — and why I think everyone should take a class at least once.",
+      "What improv comedy taught me about showing up at work, and why I think everyone should take a class at least once.",
     url: "https://medium.com/@rebeccanorth/yes-and-ing-to-success-2053088b7f7f",
     mediumProfile: "https://medium.com/@rebeccanorth",
   },
@@ -219,19 +218,19 @@ export const allProjects = [
     ],
     modal: {
       overview:
-        "M365 Consumer growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior — why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
+        "Consumer M365 and Copilot growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior: why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
       process: [
-        { step: "Ideate", desc: "Identify problems and propose solutions that balance business impact, engineering cost, and user needs — always starting from the user behavior the data surfaces." },
-        { step: "Research", desc: "Conduct user research with target audiences to understand intent and friction points. Pair qual insights with telemetry to prioritize what matters." },
-        { step: "Design", desc: "Apply UX principles to create improvements grounded in customer insight. I wireframe before I spec — it makes the design conversations with engineers much faster." },
-        { step: "Develop", desc: "Lead feature teams through planning and execution. Make sure every dependency is visible and every engineer knows why the feature matters." },
-        { step: "Experiment", desc: "Test features with controlled rollouts, analyze telemetry, and scorecard results against hypothesis. Kill fast. Double down faster." },
-        { step: "Iterate", desc: "Good product is never done. Revisit, retest, and improve — especially on high-traffic surfaces where a 0.5-point conversion lift compounds at scale." },
+        { step: "Ideate", desc: "Start from user behavior the data surfaces. Identify problems and propose solutions that balance business impact, engineering cost, and user needs." },
+        { step: "Research", desc: "Pair qual research with telemetry to understand intent and friction points. Prioritize what matters." },
+        { step: "Design", desc: "Prototype before I spec. I use AI to iterate quickly and get to better design conversations with engineers sooner." },
+        { step: "Develop", desc: "Lead teams through planning and execution: every dependency visible, every engineer clear on the why." },
+        { step: "Experiment", desc: "Controlled rollouts, telemetry analysis, scorecard against hypothesis." },
+        { step: "Iterate", desc: "Good product is never done. Revisit, retest, improve." },
       ],
       images: [
-        { caption: "Windows OOBE — M365 Acquisition Flow", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(155,111,245,0.1))" },
-        { caption: "M365 Offer Page — UX Redesign", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(32,211,234,0.08))" },
-        { caption: "EDU Offer — 0→1 Launch", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
+        { caption: "Windows OOBE: M365 Acquisition Flow", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(155,111,245,0.1))" },
+        { caption: "M365 Offer Page: UX Redesign", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(32,211,234,0.08))" },
+        { caption: "EDU Offer: 0→1 Launch", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
         { caption: "Experimentation Dashboard", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.15))" },
       ],
     },
@@ -245,25 +244,24 @@ export const allProjects = [
     period: "2018 · Internship",
     type: "Internship",
     accent: "var(--accent)",
+    coverImage: "/projects/sirius-xm.png",
     tags: ["UX Design", "Figma", "Prototyping"],
     summary:
-      "Designed a website for the Customer Retention team — letting satellite radio listeners preview station schedules and find when their favorite shows air.",
+      "Designed a website for the Customer Retention team, letting satellite radio listeners preview station schedules and find when their favorite shows air.",
     metrics: [],
     modal: {
       overview:
-        "The Customer Retention Marketing team had a clear need: give listeners a way to preview station schedules so they'd re-engage with content they were already paying for. I took the project from brief to prototype — six directions, two finalists, one shipped design.",
+        "The Customer Retention Marketing team had a clear need: give listeners a way to preview station schedules so they'd re-engage with content they were already paying for. I took the project from brief to prototype: six directions, two finalists, one shipped design.",
       process: [
         { step: "Brief", desc: "Analyzed the design brief to understand the core goal: reduce churn by surfacing content value before a subscriber considers canceling." },
         { step: "Ideate", desc: "Generated six distinct website directions, each exploring a different content hierarchy and interaction model." },
         { step: "Narrow", desc: "Evaluated all six against usability principles and business requirements. Reduced to two finalists for team review." },
-        { step: "Prototype", desc: "Built an interactive Figma prototype of the selected direction — screen by screen, interaction by interaction." },
+        { step: "Prototype", desc: "Built an interactive Figma prototype of the selected direction, screen by screen, interaction by interaction." },
         { step: "Handoff", desc: "Presented to the team. Design was approved and sent to development." },
       ],
       images: [
-        { caption: "Initial Brief Analysis", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.12), rgba(244,114,182,0.08))" },
-        { caption: "Six Initial Directions", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.1))" },
-        { caption: "Two Finalist Concepts", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(244,114,182,0.06))" },
-        { caption: "Final Figma Prototype", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.18), rgba(32,211,234,0.08))" },
+        { caption: "Station Schedule: Timeframe Filter", src: "/projects/sirius-1.png", gradient: "linear-gradient(135deg, rgba(155,111,245,0.12), rgba(244,114,182,0.08))" },
+        { caption: "Station Schedule: Program Grid", src: "/projects/sirius-2.png", gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.1))" },
       ],
     },
   },
@@ -276,22 +274,22 @@ export const allProjects = [
     period: "Cornell",
     type: "Side project",
     accent: "var(--pink)",
+    coverImage: "/projects/sweat-in-the-city.png",
     tags: ["Product Design", "Sketch", "HTML/CSS/JS"],
     summary:
       "When you travel, only big-box gyms show up in search. Every boutique studio and spin class stays invisible. I built the thing I wanted to exist.",
     metrics: [],
     modal: {
       overview:
-        "The problem was personal: I travel and I work out, and finding non-chain fitness options in an unfamiliar city was genuinely painful. I designed and coded a prototype aggregator that surfaces all local workout options in one search — classes, gyms, studios, everything.",
+        "The problem was personal: I travel and I work out, and finding non-chain fitness options in an unfamiliar city was genuinely painful. I designed and coded a prototype aggregator that surfaces all local workout options in one search: classes, gyms, studios, everything.",
       process: [
         { step: "Problem", desc: "Identified the gap through personal experience: major gym chains dominate search results, leaving boutique studios completely invisible to traveling users." },
-        { step: "Design", desc: "Sketched the information architecture and key screens in Sketch. Focused on making search fast and results scannable — you're usually looking on your phone in a hotel." },
+        { step: "Design", desc: "Sketched the information architecture and key screens in Sketch. Focused on making search fast and results scannable; you're usually looking on your phone in a hotel." },
         { step: "Build", desc: "Coded the prototype in HTML, CSS, JavaScript, and PHP. Real enough to demo the full user flow end to end." },
       ],
       images: [
-        { caption: "Problem Definition & Research", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(155,111,245,0.08))" },
-        { caption: "Sketch Wireframes", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.1), rgba(32,211,234,0.08))" },
-        { caption: "Coded Prototype", src: null, gradient: "linear-gradient(135deg, rgba(244,114,182,0.15), rgba(155,111,245,0.06))" },
+        { caption: "Homepage: Boutique Fitness Discovery", src: "/projects/sweat-1.png", gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(155,111,245,0.08))" },
+        { caption: "What Do We Do", src: "/projects/sweat-2.png", gradient: "linear-gradient(135deg, rgba(244,114,182,0.1), rgba(32,211,234,0.08))" },
       ],
     },
   },
@@ -303,32 +301,31 @@ export const allProjects = [
     company: "Cornell",
     period: "2017",
     type: "Cornell",
-    accent: "#F59E0B",
+    accent: "#60A5FA",
+    coverImage: "/projects/anabels.png",
     tags: ["Web Dev", "WordPress", "Branding", "Illustrator"],
     summary:
       "Cornell's student-run grocery cooperative needed a website and a brand identity from scratch. I built both.",
     metrics: [],
     modal: {
       overview:
-        "Anabel's Grocery opened in September 2017 to give Cornell students access to affordable food on campus. They needed a web presence immediately — and a brand that felt warm, student-made, and trustworthy. I handled the full build: site architecture, WordPress development, inventory system, and all visual identity and print materials.",
+        "Anabel's Grocery opened in September 2017 to give Cornell students access to affordable food on campus. They needed a web presence immediately, and a brand that felt warm, student-made, and trustworthy. I handled the full build: site architecture, WordPress development, inventory system, and all visual identity and print materials.",
       process: [
         { step: "Scope", desc: "Identified two core needs: a site students would actually visit to check inventory, and a brand identity that felt authentic to a student-run co-op." },
-        { step: "Brand", desc: "Designed the visual identity in Illustrator — logo, color palette, typography, and tone. Created promotional materials for campus distribution." },
+        { step: "Brand", desc: "Designed the visual identity in Illustrator: logo, color palette, typography, and tone. Created promotional materials for campus distribution." },
         { step: "Build", desc: "Coded the website from design briefs using HTML, CSS, PHP on WordPress. Built a full inventory list so students could check stock before making the trip." },
         { step: "Launch", desc: "Shipped the site at store opening. Built to be maintained by non-technical student staff with minimal ongoing support." },
       ],
       images: [
-        { caption: "Brand Identity & Logo", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(155,111,245,0.06))" },
-        { caption: "Website Design", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.1), rgba(32,211,234,0.06))" },
-        { caption: "Inventory System", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.15), rgba(155,111,245,0.04))" },
-        { caption: "Print & Promotional Materials", src: null, gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(244,114,182,0.06))" },
+        { caption: "Our Impact", src: "/projects/anabels-1.png", position: "top", gradient: "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(155,111,245,0.06))" },
+        { caption: "Our Suppliers", src: "/projects/anabels-2.png", position: "top", gradient: "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(32,211,234,0.06))" },
       ],
     },
   },
 ];
 
 // ── Chat system prompt ─────────────────────────────────────────────────────────
-export const chatSystemPrompt = `You are a friendly assistant on Rebecca North's portfolio website. Answer questions about Rebecca's background, experience, projects, and skills. Be warm, concise, and direct — two to four sentences max unless more detail is genuinely needed.
+export const chatSystemPrompt = `You are a friendly assistant on Rebecca North's portfolio website. Answer questions about Rebecca's background, experience, projects, and skills. Be warm, concise, and direct; two to four sentences max unless more detail is genuinely needed.
 
 About Rebecca:
 - Growth Product Manager at Microsoft (PM2 - Consumer Copilot Growth, May 2025–Present, NYC)

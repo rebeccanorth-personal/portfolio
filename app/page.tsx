@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Mail, Phone } from "lucide-react";
 import { currently, about } from "@/lib/content";
 
 const sections = [
@@ -26,8 +27,8 @@ const sections = [
   {
     href: "/graphics",
     label: "Graphics",
-    desc: "Design work — branding, visual identity, art.",
-    color: "#F59E0B",
+    desc: "Design work: branding, visual identity, art.",
+    color: "#60A5FA",
   },
   {
     href: "/play",
@@ -85,60 +86,97 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative flex flex-col justify-center min-h-screen px-6 pt-16 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <p
-            className="text-sm font-medium tracking-widest uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+        <div className="flex flex-col gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Rebecca North
-          </p>
-
-          <h1
-            className="text-6xl sm:text-8xl font-extrabold leading-none mb-8"
-            style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
-          >
-            Growth PM.
-            <br />
-            <span className="gradient-text">Designer.</span>
-            <br />
-            Builder.
-          </h1>
-
-          <p className="text-lg max-w-xl leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
-            {about.bio}
-          </p>
-
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/professional"
-              className="px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-              style={{
-                background: "linear-gradient(135deg, var(--accent), var(--teal))",
-                color: "#fff",
-                boxShadow: "0 4px 20px rgba(155,111,245,0.25)",
-              }}
+            <p
+              className="text-sm font-medium tracking-widest uppercase mb-6"
+              style={{ color: "var(--muted)" }}
             >
-              View my work
-            </Link>
-            <a
-              href="https://rebeccanorth.me/s/Rebecca_North_Resume-3f7b.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--border)",
-                color: "var(--text)",
-              }}
+              Rebecca North
+            </p>
+
+            <h1
+              className="text-6xl sm:text-8xl font-extrabold leading-none mb-8"
+              style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
             >
-              Resume ↗
-            </a>
-          </div>
-        </motion.div>
+              Growth PM.
+              <br />
+              Designer.
+              <br />
+              Builder.
+            </h1>
+
+            <p className="text-lg max-w-xl leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
+              {about.bio}
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-6">
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.15 }}>
+                <Link
+                  href="/professional"
+                  className="inline-block px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+                  style={{
+                    background: "var(--accent)",
+                    color: "#fff",
+                    boxShadow: "0 4px 20px rgba(155,111,245,0.25)",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(155,111,245,0.45)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 4px 20px rgba(155,111,245,0.25)"; }}
+                >
+                  View my work
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.15 }}>
+                <a
+                  href="/Rebecca_North_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+                  style={{
+                    background: "var(--surface)",
+                    border: "1px solid var(--border)",
+                    color: "var(--text)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--surface-2)";
+                    e.currentTarget.style.borderColor = "var(--border-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "var(--surface)";
+                    e.currentTarget.style.borderColor = "var(--border)";
+                  }}
+                >
+                  Resume ↗
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Contact info */}
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="mailto:rebecnorth@gmail.com"
+                className="flex items-center gap-2 text-sm transition-opacity duration-200 hover:opacity-70"
+                style={{ color: "var(--muted)" }}
+              >
+                <Mail size={14} />
+                <span>rebecnorth@gmail.com</span>
+              </a>
+              <span style={{ color: "var(--border-hover)" }}>·</span>
+              <a
+                href="tel:5169966064"
+                className="flex items-center gap-2 text-sm transition-opacity duration-200 hover:opacity-70"
+                style={{ color: "var(--muted)" }}
+              >
+                <Phone size={14} />
+                <span>(516) 996-6064</span>
+              </a>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Currently widget */}
         <motion.div
@@ -147,11 +185,8 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-14 flex flex-col sm:flex-row gap-3"
         >
-          <a
-            href={currently.listening.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl group transition-all duration-200"
+          <div
+            className="flex items-center gap-3 px-4 py-3 rounded-xl"
             style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
           >
             <span className="text-base">🎵</span>
@@ -164,13 +199,10 @@ export default function Home() {
                 <span style={{ color: "var(--muted)" }}>· {currently.listening.artist}</span>
               </p>
             </div>
-          </a>
+          </div>
 
-          <a
-            href={currently.reading.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl group transition-all duration-200"
+          <div
+            className="flex items-center gap-3 px-4 py-3 rounded-xl"
             style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
           >
             <span className="text-base">📖</span>
@@ -183,24 +215,12 @@ export default function Home() {
                 <span style={{ color: "var(--muted)" }}>· {currently.reading.author}</span>
               </p>
             </div>
-          </a>
-        </motion.div>
-
-        {/* Scroll cue */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div
-            className="w-px h-10 mx-auto"
-            style={{ background: "linear-gradient(to bottom, var(--muted), transparent)" }}
-          />
+          </div>
         </motion.div>
       </section>
 
       {/* Section directory — bento layout */}
-      <section className="section px-6 max-w-6xl mx-auto">
+      <section className="pt-16 pb-10 px-6 max-w-6xl mx-auto">
         {/* Top row: Professional (wide) + Personal */}
         <div className="grid sm:grid-cols-5 gap-3 mb-3">
           {/* Professional — featured wide */}
@@ -210,14 +230,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            whileHover={{ y: -4 }}
           >
             <Link
               href="/professional"
-              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48"
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--border)",
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
             >
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -248,11 +271,14 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.08 }}
+            whileHover={{ y: -4 }}
           >
             <Link
               href="/personal"
-              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48"
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
               style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
             >
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -295,8 +321,8 @@ export default function Home() {
               label: "Graphics",
               headline: "Design work.",
               desc: "Branding, visual identity, and art.",
-              color: "#F59E0B",
-              glow: "rgba(245,158,11,0.06)",
+              color: "#60A5FA",
+              glow: "rgba(96,165,250,0.07)",
             },
             {
               href: "/play",
@@ -314,11 +340,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -4 }}
             >
               <Link
                 href={s.href}
-                className="block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36"
+                className="block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36 transition-all duration-200"
                 style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
               >
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

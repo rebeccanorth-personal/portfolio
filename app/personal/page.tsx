@@ -172,12 +172,12 @@ const previews = [PlanMyWeekPreview, LiftLogPreview, LollaPreview];
 
 export default function Personal() {
   return (
-    <div className="min-h-screen pt-24 pb-20 px-6 max-w-4xl mx-auto">
+    <div className="min-h-screen pt-20 pb-12 px-6 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-8"
       >
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-4"
@@ -192,7 +192,7 @@ export default function Personal() {
           Built for myself
         </h1>
         <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
-          Side projects I made because I needed them — vibe coded with Claude. No agency brief,
+          Side projects I made because I needed them, vibe coded with Claude. No agency brief,
           no sprint planning, just a problem I had and an AI I could build with.
         </p>
       </motion.div>
@@ -217,10 +217,10 @@ export default function Personal() {
                   style={{ background: `radial-gradient(500px at 0% 0%, ${project.accent}08, transparent 70%)` }}
                 />
 
-                <div className={`flex flex-col ${i === 0 ? "lg:flex-row" : "md:flex-row"} gap-0`}>
+                <div className="flex flex-col md:flex-row gap-0">
                   {/* Preview panel */}
                   <div
-                    className={`${i === 0 ? "lg:w-3/5" : "md:w-1/2"} p-6 flex items-center justify-center`}
+                    className="md:w-1/2 p-6 flex items-center justify-center"
                     style={{ background: "var(--surface-2)", borderRight: "1px solid var(--border)" }}
                   >
                     <div className="w-full max-w-sm">
@@ -229,7 +229,7 @@ export default function Personal() {
                   </div>
 
                   {/* Content */}
-                  <div className={`${i === 0 ? "lg:w-2/5" : "md:w-1/2"} p-8 flex flex-col`}>
+                  <div className="md:w-1/2 p-8 flex flex-col">
                     <div className="flex items-start justify-between gap-3 mb-4">
                       <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"

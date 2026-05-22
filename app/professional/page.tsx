@@ -13,14 +13,14 @@ export default function Professional() {
 
   return (
     <>
-      <div className="min-h-screen pt-24 pb-24 px-6 max-w-5xl mx-auto">
+      <div className="min-h-screen pt-20 pb-12 px-6 max-w-5xl mx-auto">
 
         {/* Page header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-10"
         >
           <p
             className="text-xs font-semibold tracking-widest uppercase mb-4"
@@ -35,7 +35,7 @@ export default function Professional() {
             Work & projects
           </h1>
           <p className="text-lg max-w-2xl" style={{ color: "var(--muted)" }}>
-            Five years at Microsoft growing M365 Consumer, plus product design and development projects from earlier in my career.
+            Five years at Microsoft growing Consumer M365 and Copilot, plus product design and development projects from earlier in my career.
           </p>
         </motion.div>
 
@@ -44,26 +44,33 @@ export default function Professional() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24 relative overflow-hidden rounded-2xl"
-          style={{ border: "1px solid rgba(32,211,234,0.2)" }}
+          className="mb-12 relative overflow-hidden rounded-2xl"
+          style={{ border: "1px solid color-mix(in srgb, var(--teal) 30%, transparent)" }}
         >
           {/* Ambient glow */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(ellipse at 80% 0%, rgba(32,211,234,0.06) 0%, transparent 60%)",
+              background: "radial-gradient(ellipse at 80% 0%, color-mix(in srgb, var(--teal) 10%, transparent) 0%, transparent 60%)",
             }}
           />
 
           {/* Top bar */}
           <div
             className="px-8 py-5 flex flex-wrap items-center justify-between gap-4"
-            style={{ borderBottom: "1px solid rgba(32,211,234,0.12)", background: "rgba(32,211,234,0.03)" }}
+            style={{
+              borderBottom: "1px solid color-mix(in srgb, var(--teal) 18%, transparent)",
+              background: "color-mix(in srgb, var(--teal) 5%, transparent)",
+            }}
           >
             <div className="flex items-center gap-3">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs"
-                style={{ background: "rgba(32,211,234,0.12)", color: "var(--teal)", border: "1px solid rgba(32,211,234,0.2)" }}
+                style={{
+                  background: "color-mix(in srgb, var(--teal) 18%, transparent)",
+                  color: "var(--teal)",
+                  border: "1px solid color-mix(in srgb, var(--teal) 30%, transparent)",
+                }}
               >
                 MS
               </div>
@@ -77,7 +84,11 @@ export default function Professional() {
                 <span
                   key={tag}
                   className="text-xs px-2.5 py-1 rounded-full"
-                  style={{ background: "rgba(32,211,234,0.08)", color: "var(--teal)", border: "1px solid rgba(32,211,234,0.15)" }}
+                  style={{
+                    background: "color-mix(in srgb, var(--teal) 10%, transparent)",
+                    color: "var(--teal)",
+                    border: "1px solid color-mix(in srgb, var(--teal) 20%, transparent)",
+                  }}
                 >
                   {tag}
                 </span>
@@ -97,7 +108,10 @@ export default function Professional() {
                 <div
                   key={m.label}
                   className="px-4 py-4 rounded-xl text-center"
-                  style={{ background: "rgba(32,211,234,0.06)", border: "1px solid rgba(32,211,234,0.12)" }}
+                  style={{
+                    background: "color-mix(in srgb, var(--teal) 8%, transparent)",
+                    border: "1px solid color-mix(in srgb, var(--teal) 18%, transparent)",
+                  }}
                 >
                   <p className="text-3xl font-extrabold leading-none mb-1" style={{ color: "var(--teal)" }}>
                     {m.value}
@@ -116,8 +130,8 @@ export default function Professional() {
               </p>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
-                  { title: "PM2 — Subscriber Growth & Lifecycle", period: "May 2025 – Present", location: "New York, NY" },
-                  { title: "PM2 — First Run Experiences", period: "Sep 2022 – Apr 2025", location: "New York, NY" },
+                  { title: "PM2: Subscriber Growth & Lifecycle", period: "May 2025 – Present", location: "New York, NY" },
+                  { title: "PM2: First Run Experiences", period: "Sep 2022 – Apr 2025", location: "New York, NY" },
                   { title: "Product Manager", period: "Sep 2020 – Aug 2022", location: "Redmond, WA" },
                   { title: "Program Manager Intern", period: "Jun – Aug 2019", location: "Redmond, WA" },
                 ].map((r) => (
@@ -149,7 +163,7 @@ export default function Professional() {
                     style={{ background: "var(--surface-2)", border: "1px solid var(--border)" }}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-bold" style={{ color: "rgba(32,211,234,0.5)" }}>
+                      <span className="text-xs font-bold" style={{ color: "color-mix(in srgb, var(--teal) 60%, transparent)" }}>
                         0{i + 1}
                       </span>
                       <p className="text-sm font-bold" style={{ color: "var(--text)" }}>{s.step}</p>
@@ -163,11 +177,14 @@ export default function Professional() {
             {/* NDA note */}
             <div
               className="flex items-start gap-3 px-4 py-3 rounded-xl"
-              style={{ background: "rgba(155,111,245,0.04)", border: "1px solid rgba(155,111,245,0.1)" }}
+              style={{
+                background: "color-mix(in srgb, var(--accent) 6%, transparent)",
+                border: "1px solid color-mix(in srgb, var(--accent) 15%, transparent)",
+              }}
             >
               <span className="text-sm mt-0.5" style={{ color: "var(--accent)" }}>🔒</span>
               <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
-                Due to NDA constraints I can&apos;t share product screenshots — but I&apos;m happy to walk through specific experiments, designs, or decisions in detail.{" "}
+                Due to NDA constraints I can&apos;t share product screenshots, but I&apos;m happy to walk through specific experiments, designs, or decisions in detail.{" "}
                 <a href="mailto:rebecnorth@gmail.com" className="underline" style={{ color: "var(--accent)" }}>
                   Reach out
                 </a>
@@ -186,7 +203,7 @@ export default function Professional() {
             Project work
           </p>
           <p className="text-sm mb-8" style={{ color: "var(--muted)" }}>
-            Product design, UX, and development projects — click any to explore.
+            Product design, UX, and development projects. Click any to explore.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -194,8 +211,8 @@ export default function Professional() {
               <motion.button
                 key={p.id}
                 onClick={() => setActive(p as ProjectModalData)}
-                className="text-left relative overflow-hidden group rounded-2xl"
-                style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
+                className="text-left relative overflow-hidden group rounded-2xl cursor-pointer"
+                style={{ background: "var(--surface)", border: "1px solid var(--border-hover)", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -204,7 +221,7 @@ export default function Professional() {
               >
                 {/* Accent top line */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-px transition-all duration-300"
+                  className="absolute top-0 left-0 right-0 h-px transition-all duration-300 z-10"
                   style={{ background: `linear-gradient(90deg, ${p.accent}, transparent)` }}
                 />
                 {/* Hover glow */}
@@ -215,17 +232,31 @@ export default function Professional() {
                   }}
                 />
 
-                {/* Preview "screenshot" strip */}
+                {/* Preview strip */}
                 <div
-                  className="h-36 w-full flex items-center justify-center relative overflow-hidden"
-                  style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${p.accent} 10%, #0E0E1E), #0E0E1E)` }}
+                  className="h-36 w-full relative overflow-hidden"
+                  style={{
+                    background: `color-mix(in srgb, ${p.accent} 12%, var(--surface-2))`,
+                    borderBottom: "1px solid var(--border)",
+                  }}
                 >
-                  <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: `color-mix(in srgb, ${p.accent} 40%, transparent)` }}>
-                    {p.tagline}
-                  </p>
+                  {(p as { coverImage?: string }).coverImage ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={(p as { coverImage: string }).coverImage}
+                      alt={p.name}
+                      className="w-full h-full block object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: `color-mix(in srgb, ${p.accent} 60%, transparent)` }}>
+                        {p.tagline}
+                      </p>
+                    </div>
+                  )}
                   <div
                     className="absolute bottom-3 right-3 text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-200 font-semibold"
-                    style={{ background: `color-mix(in srgb, ${p.accent} 15%, transparent)`, color: p.accent }}
+                    style={{ background: `color-mix(in srgb, ${p.accent} 15%, transparent)`, color: p.accent, backdropFilter: "blur(4px)" }}
                   >
                     Open →
                   </div>

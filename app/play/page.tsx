@@ -10,12 +10,12 @@ const photoPlaceholders = Array.from({ length: 9 }, (_, i) => ({
 
 export default function Play() {
   return (
-    <div className="min-h-screen pt-24 pb-20 px-6 max-w-5xl mx-auto">
+    <div className="min-h-screen pt-20 pb-12 px-6 max-w-5xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-8"
       >
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-4"

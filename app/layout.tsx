@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import CursorGlow from "@/components/CursorGlow";
 import ChatWidget from "@/components/ChatWidget";
+import Footer from "@/components/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         <CursorGlow />
         <Nav />
         <main>{children}</main>
+        <Footer />
         <ChatWidget />
       </body>
     </html>

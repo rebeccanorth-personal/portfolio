@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { experience, about } from "@/lib/content";
 import { useState } from "react";
 
@@ -8,7 +9,7 @@ const typeColors: Record<string, string> = {
   "full-time": "var(--accent)",
   intern: "var(--teal)",
   education: "var(--pink)",
-  project: "#F59E0B",
+  project: "#60A5FA",
 };
 
 const typeLabels: Record<string, string> = {
@@ -20,44 +21,71 @@ const typeLabels: Record<string, string> = {
 
 export default function About() {
   const [expanded, setExpanded] = useState<string | null>("ms-growth");
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen pt-24 pb-20 px-6 max-w-4xl mx-auto">
+    <div className="min-h-screen pt-20 pb-12 px-6 max-w-4xl mx-auto">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-16"
+        className="mb-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12"
       >
-        <p
-          className="text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ color: "var(--muted)" }}
-        >
-          About
-        </p>
-        <h1
-          className="text-5xl font-extrabold mb-6"
-          style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
-        >
-          Hi, I&apos;m Rebecca.
-        </h1>
-        <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
-          Growth PM at Microsoft. Cornell Information Science. Five years of turning
-          hypotheses into shipped product and watching the numbers move.
-        </p>
+        <div className="flex-1">
+          <p
+            className="text-xs font-semibold tracking-widest uppercase mb-3"
+            style={{ color: "var(--muted)" }}
+          >
+            About
+          </p>
+          <h1
+            className="text-4xl font-extrabold mb-4"
+            style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
+          >
+            Hi, I&apos;m Rebecca.
+          </h1>
+          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            Growth PM at Microsoft. Cornell Information Science. Five years of turning
+            hypotheses into shipped product and watching the numbers move.
+          </p>
+        </div>
+
+        <div className="flex-shrink-0">
+          <div
+            className="relative rounded-2xl overflow-hidden"
+            style={{
+              width: 220,
+              height: 260,
+              border: "1px solid var(--border)",
+              boxShadow: "0 12px 36px rgba(0,0,0,0.3)",
+            }}
+          >
+            <Image
+              src="/rebecca.jpg"
+              alt="Rebecca North"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+            <div
+              className="absolute inset-x-0 bottom-0 h-12 pointer-events-none"
+              style={{ background: "linear-gradient(to top, var(--bg), transparent)" }}
+            />
+          </div>
+        </div>
       </motion.div>
 
       {/* Story */}
-      <div className="mb-20 space-y-4">
+      <div className="mb-12 space-y-3">
         {about.story.map((para, i) => (
           <motion.p
             key={i}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="text-lg leading-relaxed"
+            transition={{ delay: i * 0.08, duration: 0.4 }}
+            className="text-base leading-relaxed"
             style={{ color: i === 0 ? "var(--text)" : "var(--muted)" }}
           >
             {para}
@@ -72,7 +100,7 @@ export default function About() {
         viewport={{ once: true }}
       >
         <p
-          className="text-xs font-semibold tracking-widest uppercase mb-8"
+          className="text-xs font-semibold tracking-widest uppercase mb-5"
           style={{ color: "var(--muted)" }}
         >
           Timeline
@@ -93,34 +121,40 @@ export default function About() {
               return (
                 <motion.div
                   key={role.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
                 >
                   <button
                     onClick={() => setExpanded(isOpen ? null : role.id)}
-                    className="w-full text-left pl-10 relative group"
+                    onMouseEnter={() => setHovered(role.id)}
+                    onMouseLeave={() => setHovered(null)}
+                    className="w-full text-left pl-10 relative"
+                    style={{ cursor: "pointer" }}
                   >
                     {/* Node */}
                     <div
                       className="absolute left-0 top-4 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200"
                       style={{
-                        background: isOpen ? color : "var(--surface-2)",
-                        border: `2px solid ${isOpen ? color : "var(--border-hover)"}`,
-                        boxShadow: isOpen ? `0 0 12px ${color}66` : "none",
+                        background: isOpen || hovered === role.id ? color : "var(--surface-2)",
+                        border: `2px solid ${isOpen || hovered === role.id ? color : "var(--border-hover)"}`,
+                        boxShadow: isOpen ? `0 0 12px ${color}66` : hovered === role.id ? `0 0 8px ${color}44` : "none",
                       }}
                     >
                       <div
                         className="w-2 h-2 rounded-full"
-                        style={{ background: isOpen ? "#fff" : color }}
+                        style={{ background: isOpen || hovered === role.id ? "#fff" : color }}
                       />
                     </div>
 
                     {/* Header */}
                     <div
                       className="card px-5 py-4 flex items-center justify-between transition-all duration-200"
-                      style={isOpen ? { borderColor: `${color}44` } : {}}
+                      style={{
+                        borderColor: isOpen ? `${color}44` : hovered === role.id ? `${color}30` : undefined,
+                        background: hovered === role.id && !isOpen ? "var(--surface-2)" : undefined,
+                      }}
                     >
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-wrap items-baseline gap-2 mb-1">
@@ -128,16 +162,16 @@ export default function About() {
                             className="text-sm font-bold"
                             style={{ color: "var(--text)" }}
                           >
-                            {role.title}
+                            {role.company}
                           </span>
                           {role.subtitle && (
                             <span className="text-sm italic" style={{ color: color }}>
-                              — {role.subtitle}
+                              · {role.subtitle}
                             </span>
                           )}
                         </div>
                         <div className="flex flex-wrap gap-3 text-xs" style={{ color: "var(--muted)" }}>
-                          <span className="font-semibold">{role.company}</span>
+                          <span className="font-semibold">{role.title}</span>
                           <span>{role.period}</span>
                           <span>{role.location}</span>
                         </div>
@@ -150,10 +184,11 @@ export default function About() {
                           {typeLabels[role.type]}
                         </span>
                         <span
-                          className="text-sm transition-transform duration-200"
+                          className="text-sm font-bold transition-all duration-200"
                           style={{
-                            color: "var(--muted)",
+                            color: isOpen || hovered === role.id ? color : "var(--muted)",
                             transform: isOpen ? "rotate(180deg)" : "none",
+                            display: "inline-block",
                           }}
                         >
                           ↓
