@@ -4,7 +4,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import CursorGlow from "@/components/CursorGlow";
-import CursorTrail from "@/components/CursorTrail";
+import CursorManager from "@/components/CursorManager";
 import ContactWidget from "@/components/ContactWidget";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -49,7 +49,7 @@ export default function RootLayout({
       <body className="min-h-screen">
         <ScrollProgress />
         <CursorGlow />
-        <CursorTrail />
+        <CursorManager />
         <Nav />
         <main>{children}</main>
         <Footer />
