@@ -53,7 +53,7 @@ export default function ContactWidget() {
         style={{ background: "var(--accent)", color: "#fff" }}
         onMouseEnter={(e) => {
           const el = e.currentTarget as HTMLButtonElement;
-          el.style.background = "linear-gradient(135deg, rgba(147,210,255,0.6) 0%, var(--accent) 65%)";
+          el.style.background = "linear-gradient(135deg, rgba(56,189,248,0.9) 0%, var(--accent) 65%)";
           el.style.boxShadow = "0 4px 28px rgba(155,111,245,0.55), 0 0 0 3px rgba(155,111,245,0.18)";
         }}
         onMouseLeave={(e) => {
