@@ -205,14 +205,16 @@ export default function Home() {
                     color: "var(--text)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(155,111,245,0.22)";
-                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.65)";
-                    e.currentTarget.style.boxShadow = "0 4px 24px rgba(155,111,245,0.28)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.38)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.9)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.18), 0 6px 32px rgba(155,111,245,0.45)";
+                    e.currentTarget.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "rgba(155,111,245,0.10)";
                     e.currentTarget.style.borderColor = "rgba(155,111,245,0.35)";
                     e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.color = "var(--text)";
                   }}
                 >
                   Resume ↗
