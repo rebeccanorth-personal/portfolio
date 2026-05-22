@@ -12,6 +12,8 @@ export default function CursorTrail() {
   );
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
     const onMove = (e: MouseEvent) => {
       cursor.current = { x: e.clientX, y: e.clientY };
     };
