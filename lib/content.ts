@@ -37,11 +37,10 @@ export const experience = [
     period: "May 2025 – Present",
     location: "New York, NY",
     description:
-      "Drive end-to-end growth strategy for Consumer M365 in-app experiences through PLG and hypothesis-driven experiments. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation. Launched a 0→1 EDU offer to test new market segments.",
+      "Drive end-to-end growth strategy for Consumer M365 in-app experiences through PLG and hypothesis-driven experiments. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation.",
     metrics: [
       { value: "20%", label: "YoY subscriber growth" },
-      { value: "900K", label: "new subscribers via EDU offer" },
-      { value: "+200K", label: "trial conversions" },
+      { value: "18%", label: "trial conversion increase" },
     ],
     type: "full-time" as const,
   },
@@ -209,11 +208,10 @@ export const allProjects = [
     accent: "var(--teal)",
     tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
     summary:
-      "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure, launched a 0→1 EDU offer, and shipped redesigns that moved subscription numbers by millions.",
+      "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure and shipped redesigns that moved subscription numbers by millions.",
     metrics: [
       { value: "20%", label: "YoY subscriber growth" },
-      { value: "+200K", label: "trial conversions" },
-      { value: "900K", label: "new subscribers (EDU)" },
+      { value: "18%", label: "trial conversion increase" },
       { value: "7%", label: "MAU growth across Office apps" },
     ],
     modal: {
@@ -230,7 +228,7 @@ export const allProjects = [
       images: [
         { caption: "Windows OOBE: M365 Acquisition Flow", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(155,111,245,0.1))" },
         { caption: "M365 Offer Page: UX Redesign", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(32,211,234,0.08))" },
-        { caption: "EDU Offer: 0→1 Launch", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
+        { caption: "Trial Conversion: Lifecycle Optimization", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
         { caption: "Experimentation Dashboard", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.15))" },
       ],
     },
@@ -337,7 +335,6 @@ About Rebecca:
 
 Key impact:
 - 20% YoY M365 Consumer subscriber growth
-- Launched 0→1 EDU offer unlocking 900K new subscribers annually
 - 7% MAU growth across Word, Excel, PowerPoint
 - 14% subscription increase via UX improvements
 - 10% paid activation increase via Windows 11 redesign
