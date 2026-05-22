@@ -185,10 +185,10 @@ export default function Home() {
                   style={{
                     background: "var(--accent)",
                     color: "#fff",
-                    boxShadow: "0 4px 20px rgba(155,111,245,0.25)",
+                    boxShadow: "0 4px 24px rgba(155,111,245,0.45)",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(155,111,245,0.45)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 4px 20px rgba(155,111,245,0.25)"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 36px rgba(155,111,245,0.65)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 4px 24px rgba(155,111,245,0.45)"; }}
                 >
                   View my work
                 </Link>
@@ -200,21 +200,22 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
                   style={{
-                    background: "rgba(155,111,245,0.10)",
-                    border: "1px solid rgba(155,111,245,0.35)",
-                    color: "var(--text)",
+                    background: "rgba(155,111,245,0.22)",
+                    border: "1px solid rgba(155,111,245,0.6)",
+                    color: "#E8E8F2",
+                    boxShadow: "0 2px 12px rgba(155,111,245,0.18)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(155,111,245,0.38)";
-                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.9)";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.18), 0 6px 32px rgba(155,111,245,0.45)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.42)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,1)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.22), 0 8px 40px rgba(155,111,245,0.55)";
                     e.currentTarget.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(155,111,245,0.10)";
-                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.35)";
-                    e.currentTarget.style.boxShadow = "none";
-                    e.currentTarget.style.color = "var(--text)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.22)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.6)";
+                    e.currentTarget.style.boxShadow = "0 2px 12px rgba(155,111,245,0.18)";
+                    e.currentTarget.style.color = "#E8E8F2";
                   }}
                 >
                   Resume ↗
