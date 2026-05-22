@@ -64,19 +64,22 @@ export default function ProjectModal({ project, onClose }: Props) {
 
           {/* Sheet */}
           <motion.div
-            className="relative z-10 w-full sm:max-w-3xl overflow-y-auto"
+            className="relative z-10 w-full sm:max-w-3xl overflow-hidden"
             style={{
               background: "var(--surface)",
               borderRadius: "20px 20px 0 0",
               maxHeight: "92vh",
               border: "1px solid var(--border-hover)",
               borderBottom: "none",
+              display: "flex",
+              flexDirection: "column",
             }}
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 320 }}
           >
+          <div className="overflow-y-auto flex-1">
             {/* Image carousel */}
             <div className="relative overflow-hidden rounded-t-[20px]" style={{ aspectRatio: "16/9" }}>
               <AnimatePresence mode="wait">
@@ -269,6 +272,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
               )}
             </div>
+          </div>
           </motion.div>
         </div>
       )}

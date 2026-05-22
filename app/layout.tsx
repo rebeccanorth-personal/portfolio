@@ -7,6 +7,7 @@ import CursorGlow from "@/components/CursorGlow";
 import CursorTrail from "@/components/CursorTrail";
 import ContactWidget from "@/components/ContactWidget";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} ${geistMono.variable}`}>
       <body className="min-h-screen">
+        <ScrollProgress />
         <CursorGlow />
         <CursorTrail />
         <Nav />

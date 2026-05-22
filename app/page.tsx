@@ -152,16 +152,26 @@ export default function Home() {
               Rebecca North
             </p>
 
-            <h1
+            <motion.h1
               className="text-6xl sm:text-8xl font-extrabold leading-none mb-8"
               style={{ color: "var(--text)", letterSpacing: "-0.03em" }}
+              initial="hidden"
+              animate="visible"
+              variants={{ visible: { transition: { staggerChildren: 0.13, delayChildren: 0.2 } } }}
             >
-              Growth PM.
-              <br />
-              Designer.
-              <br />
-              Builder.
-            </h1>
+              {["Growth PM.", "Designer.", "Builder."].map((line) => (
+                <motion.span
+                  key={line}
+                  className="block"
+                  variants={{
+                    hidden: { opacity: 0, y: 28 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+                  }}
+                >
+                  {line}
+                </motion.span>
+              ))}
+            </motion.h1>
 
             <p className="text-lg max-w-xl leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
               {about.bio}
