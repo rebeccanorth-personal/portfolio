@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -47,9 +48,12 @@ export default function ContactWidget() {
   return (
     <>
       {/* Floating button */}
-      <button
+      <motion.button
+        whileHover={{ y: -4 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15 }}
         onClick={() => setOpen(!open)}
-        className="contact-btn fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer"
+        className="contact-btn fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer"
         style={{ background: "var(--accent)", color: "#fff" }}
         onMouseEnter={(e) => {
           const el = e.currentTarget as HTMLButtonElement;
@@ -64,7 +68,7 @@ export default function ContactWidget() {
       >
         <span>{open ? "✕" : "✉"}</span>
         <span className="hidden sm:inline">{open ? "Close" : "Get in touch"}</span>
-      </button>
+      </motion.button>
 
       {/* Backdrop */}
       {open && (
