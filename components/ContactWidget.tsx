@@ -51,8 +51,16 @@ export default function ContactWidget() {
         onClick={() => setOpen(!open)}
         className="contact-btn fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer"
         style={{ background: "var(--accent)", color: "#fff" }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 28px rgba(155,111,245,0.55), 0 0 0 3px rgba(155,111,245,0.18)"; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.boxShadow = ""; }}
+        onMouseEnter={(e) => {
+          const el = e.currentTarget as HTMLButtonElement;
+          el.style.background = "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, transparent 60%), var(--accent)";
+          el.style.boxShadow = "0 4px 28px rgba(155,111,245,0.55), 0 0 0 3px rgba(155,111,245,0.18)";
+        }}
+        onMouseLeave={(e) => {
+          const el = e.currentTarget as HTMLButtonElement;
+          el.style.background = "var(--accent)";
+          el.style.boxShadow = "";
+        }}
       >
         <span>{open ? "✕" : "✉"}</span>
         <span className="hidden sm:inline">{open ? "Close" : "Get in touch"}</span>
