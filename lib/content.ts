@@ -271,7 +271,7 @@ export const allProjects = [
     tagline: "Travel Fitness Aggregator",
     role: "Product Designer + Developer",
     company: "Side project",
-    period: "Cornell",
+    period: "2018 · Cornell",
     type: "Side project",
     accent: "var(--pink)",
     coverImage: "/projects/sweat-in-the-city.png",

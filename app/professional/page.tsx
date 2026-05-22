@@ -1,9 +1,38 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import { allProjects } from "@/lib/content";
 import ProjectModal, { ProjectModalData } from "@/components/ProjectModal";
+
+function parseMetric(value: string) {
+  const prefix = value.startsWith("+") ? "+" : "";
+  const suffix = value.includes("%") ? "%" : value.endsWith("K") ? "K" : "";
+  const num = parseInt(value.replace(/[^0-9]/g, ""));
+  return { prefix, suffix, num };
+}
+
+function CountUp({ value }: { value: string }) {
+  const { prefix, suffix, num } = parseMetric(value);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * num));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [inView, num]);
+
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+}
 
 const microsoft = allProjects[0];
 const projectWork = allProjects.slice(1);
@@ -114,7 +143,7 @@ export default function Professional() {
                   }}
                 >
                   <p className="text-3xl font-extrabold leading-none mb-1" style={{ color: "var(--teal)" }}>
-                    {m.value}
+                    <CountUp value={m.value} />
                   </p>
                   <p className="text-xs leading-tight" style={{ color: "var(--muted)" }}>
                     {m.label}

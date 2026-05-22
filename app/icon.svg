@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- R: vertical + angular bump + diagonal leg -->
+  <path d="M2 30 V2 H9 L13 6 V10 L9 14 H2 M8 14 L13 30"
+        stroke="#9B6FF5" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- N: two verticals + diagonal -->
+  <path d="M18 30 V2 L30 30 V2"
+        stroke="#9B6FF5" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

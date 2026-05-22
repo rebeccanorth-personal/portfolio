@@ -5,6 +5,59 @@ import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { currently, about } from "@/lib/content";
 
+function MusicBars() {
+  return (
+    <div className="flex items-end gap-px" style={{ width: 20, height: 20 }}>
+      {[0, 1, 2, 3].map((i) => (
+        <div
+          key={i}
+          style={{
+            width: 4,
+            borderRadius: 2,
+            background: "var(--accent)",
+            animation: `musicBar 0.65s ease-in-out infinite alternate`,
+            animationDelay: `${i * 0.16}s`,
+            minHeight: 3,
+          }}
+        />
+      ))}
+      <style>{`
+        @keyframes musicBar {
+          from { height: 4px; }
+          to { height: 20px; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function ReadingLines() {
+  return (
+    <div style={{ width: 20, height: 20 }} className="flex flex-col justify-center gap-1">
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          style={{
+            height: 3,
+            borderRadius: 2,
+            width: i === 2 ? "60%" : "100%",
+            background: "var(--teal)",
+            animation: `readLine 1.8s ease-in-out infinite`,
+            animationDelay: `${i * 0.6}s`,
+            opacity: 0.3,
+          }}
+        />
+      ))}
+      <style>{`
+        @keyframes readLine {
+          0%, 100% { opacity: 0.3; }
+          33% { opacity: 1; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
 const sections = [
   {
     href: "/about",
@@ -189,7 +242,7 @@ export default function Home() {
             className="flex items-center gap-3 px-4 py-3 rounded-xl"
             style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
           >
-            <span className="text-base">🎵</span>
+            <MusicBars />
             <div>
               <p className="text-xs mb-0.5" style={{ color: "var(--muted)" }}>
                 currently listening
@@ -205,7 +258,7 @@ export default function Home() {
             className="flex items-center gap-3 px-4 py-3 rounded-xl"
             style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
           >
-            <span className="text-base">📖</span>
+            <ReadingLines />
             <div>
               <p className="text-xs mb-0.5" style={{ color: "var(--muted)" }}>
                 currently reading

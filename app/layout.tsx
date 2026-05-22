@@ -4,7 +4,8 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import CursorGlow from "@/components/CursorGlow";
-import ChatWidget from "@/components/ChatWidget";
+import CursorTrail from "@/components/CursorTrail";
+import ContactWidget from "@/components/ContactWidget";
 import Footer from "@/components/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -27,6 +28,13 @@ export const metadata: Metadata = {
     description: "Growth PM. Designer. Builder.",
     url: "https://rebeccanorth.me",
     siteName: "Rebecca North",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rebecca North",
+    description: "Growth PM. Designer. Builder.",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -39,10 +47,11 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} ${geistMono.variable}`}>
       <body className="min-h-screen">
         <CursorGlow />
+        <CursorTrail />
         <Nav />
         <main>{children}</main>
         <Footer />
-        <ChatWidget />
+        <ContactWidget />
       </body>
     </html>
   );

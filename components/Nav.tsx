@@ -79,10 +79,17 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-sm font-semibold tracking-wide transition-opacity duration-200 hover:opacity-70"
-          style={{ color: "var(--text)" }}
+          className="flex items-center gap-2.5 transition-opacity duration-200 hover:opacity-75"
         >
-          rebecca north
+          <svg width="26" height="20" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+            <path d="M2 28 V2 H12 L17 7 V12 L12 17 H2 M10 17 L17 28"
+                  stroke="var(--accent)" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter"/>
+            <path d="M23 28 V2 L38 28 V2"
+                  stroke="var(--accent)" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter"/>
+          </svg>
+          <span className="text-sm font-semibold tracking-wide" style={{ color: "var(--text)" }}>
+            rebecca north
+          </span>
         </Link>
 
         {/* Desktop nav */}

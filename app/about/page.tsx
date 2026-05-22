@@ -51,7 +51,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 flex justify-center">
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
