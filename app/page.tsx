@@ -427,7 +427,7 @@ export default function Home() {
                   style={{ background: `radial-gradient(300px at 0% 100%, ${s.glow}, transparent 70%)` }}
                 />
                 <span
-                  className="absolute right-4 bottom-3 text-6xl font-black select-none pointer-events-none leading-none"
+                  className="absolute right-4 bottom-3 text-8xl sm:text-6xl font-black select-none pointer-events-none leading-none"
                   style={{ color: `color-mix(in srgb, ${s.color} 8%, transparent)` }}
                 >
                   {s.num}
