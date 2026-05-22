@@ -57,15 +57,7 @@ const travel: TravelItem[] = [
   { src: "/travel/whistler.jpg", location: "Whistler, Canada" },
   { src: "/travel/vancouver.jpg", location: "Vancouver, Canada" },
   { src: "/travel/bend.png", location: "Bend, Oregon" },
-  {
-    pair: [
-      { src: "/travel/sequim-summit.jpg", location: "Sequim, Washington" },
-      { src: "/travel/sequim-2.jpg", location: "Sequim, Washington" },
-    ],
-    location: "Sequim, Washington",
-  },
   { src: "/travel/mount-rainier.jpg", location: "Mount Rainier, Washington" },
-  { src: "/travel/monterey.jpg", location: "Monterey, California" },
 ];
 
 function PhotoCard({ src, location }: TravelPhoto) {
@@ -209,83 +201,33 @@ export default function Play() {
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
           {travel.map((item, i) => {
             if ("triple" in item) {
-              return (
+              return item.triple.map((p, j) => (
                 <motion.div
-                  key={item.location + "-triple"}
+                  key={p.src}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="break-inside-avoid flex gap-2"
+                  transition={{ delay: (i + j) * 0.05 }}
+                  className="break-inside-avoid"
                 >
-                  {item.triple.map((p, j) => (
-                    <div
-                      key={j}
-                      className="flex-1 rounded-xl overflow-hidden group relative cursor-default"
-                      style={{ border: "1px solid var(--border)" }}
-                    >
-                      <Image
-                        src={p.src}
-                        alt={p.location}
-                        width={600}
-                        height={800}
-                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.04]"
-                      />
-                      <div
-                        className="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background:
-                            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)",
-                        }}
-                      >
-                        <div className="px-2 pb-2">
-                          <p className="text-[10px] font-bold leading-tight text-white">{p.location}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                  <PhotoCard src={p.src} location={p.location} />
                 </motion.div>
-              );
+              ));
             }
 
             if ("pair" in item) {
-              return (
+              return item.pair.map((p, j) => (
                 <motion.div
-                  key={item.location + "-pair"}
+                  key={p.src}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="break-inside-avoid flex gap-2"
+                  transition={{ delay: (i + j) * 0.05 }}
+                  className="break-inside-avoid"
                 >
-                  {item.pair.map((p, j) => (
-                    <div
-                      key={j}
-                      className="flex-1 rounded-xl overflow-hidden group relative cursor-default"
-                      style={{ border: "1px solid var(--border)" }}
-                    >
-                      <Image
-                        src={p.src}
-                        alt={p.location}
-                        width={800}
-                        height={1066}
-                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.04]"
-                      />
-                      <div
-                        className="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background:
-                            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)",
-                        }}
-                      >
-                        <div className="px-2 pb-2">
-                          <p className="text-xs font-bold leading-tight text-white">{p.location}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                  <PhotoCard src={p.src} location={p.location} />
                 </motion.div>
-              );
+              ));
             }
 
             return (
