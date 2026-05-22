@@ -66,6 +66,27 @@ body {
   box-shadow: 0 0 40px rgba(155, 111, 245, 0.06);
 }
 
+/* Bento nav cards — colored borders on mobile only */
+.bento-teal   { border: 1px solid var(--border); }
+.bento-pink   { border: 1px solid var(--border); }
+.bento-purple { border: 1px solid var(--border); }
+.bento-blue   { border: 1px solid var(--border); }
+.bento-green  { border: 1px solid var(--border); }
+
+@media (max-width: 639px) {
+  .bento-teal   { border-color: rgba(32,211,234,0.28); }
+  .bento-pink   { border-color: rgba(244,114,182,0.28); }
+  .bento-purple { border-color: rgba(155,111,245,0.28); }
+  .bento-blue   { border-color: rgba(96,165,250,0.28); }
+  .bento-green  { border-color: rgba(52,211,153,0.28); }
+}
+
+/* Contact widget button — glow on mobile only */
+.contact-btn { box-shadow: none; }
+@media (max-width: 639px) {
+  .contact-btn { box-shadow: 0 4px 28px rgba(155,111,245,0.55), 0 0 0 3px rgba(155,111,245,0.18); }
+}
+
 /* Section padding */
 .section {
   padding: 80px 0;

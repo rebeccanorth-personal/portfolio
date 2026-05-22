@@ -301,13 +301,10 @@ export default function Home() {
           >
             <Link
               href="/professional"
-              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
-              style={{
-                background: "var(--surface)",
-                border: "1px solid rgba(32,211,234,0.28)",
-              }}
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200 bento-teal"
+              style={{ background: "var(--surface)" }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.6)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.28)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
             >
               <div
                 className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
@@ -342,10 +339,10 @@ export default function Home() {
           >
             <Link
               href="/personal"
-              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
-              style={{ background: "var(--surface)", border: "1px solid rgba(244,114,182,0.28)" }}
+              className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200 bento-pink"
+              style={{ background: "var(--surface)" }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.6)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.28)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
             >
               <div
                 className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
@@ -381,7 +378,7 @@ export default function Home() {
               desc: "Story, background, and timeline.",
               color: "var(--accent)",
               glow: "rgba(155,111,245,0.12)",
-              border: "rgba(155,111,245,0.28)",
+              cardClass: "bento-purple",
               borderHover: "rgba(155,111,245,0.6)",
             },
             {
@@ -392,7 +389,7 @@ export default function Home() {
               desc: "Branding, visual identity, and art.",
               color: "#60A5FA",
               glow: "rgba(96,165,250,0.12)",
-              border: "rgba(96,165,250,0.28)",
+              cardClass: "bento-blue",
               borderHover: "rgba(96,165,250,0.6)",
             },
             {
@@ -403,7 +400,7 @@ export default function Home() {
               desc: "Writing, travel, and everything else.",
               color: "#34D399",
               glow: "rgba(52,211,153,0.12)",
-              border: "rgba(52,211,153,0.28)",
+              cardClass: "bento-green",
               borderHover: "rgba(52,211,153,0.6)",
             },
           ].map((s, i) => (
@@ -417,10 +414,10 @@ export default function Home() {
             >
               <Link
                 href={s.href}
-                className="block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36 transition-all duration-200"
-                style={{ background: "var(--surface)", border: `1px solid ${s.border}` }}
+                className={`block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36 transition-all duration-200 ${s.cardClass}`}
+                style={{ background: "var(--surface)" }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = s.borderHover; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = s.border; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
               >
                 <div
                   className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
