@@ -200,17 +200,19 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
                   style={{
-                    background: "var(--surface)",
-                    border: "1px solid var(--border)",
+                    background: "rgba(155,111,245,0.10)",
+                    border: "1px solid rgba(155,111,245,0.35)",
                     color: "var(--text)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "var(--surface-2)";
-                    e.currentTarget.style.borderColor = "var(--border-hover)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.22)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.65)";
+                    e.currentTarget.style.boxShadow = "0 4px 24px rgba(155,111,245,0.28)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "var(--surface)";
-                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.10)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.35)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
                   Resume ↗
