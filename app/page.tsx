@@ -200,22 +200,21 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
                   style={{
-                    background: "rgba(155,111,245,0.22)",
-                    border: "1px solid rgba(155,111,245,0.6)",
-                    color: "#E8E8F2",
-                    boxShadow: "0 2px 12px rgba(155,111,245,0.18)",
+                    background: "rgba(155,111,245,0.08)",
+                    border: "1px solid rgba(155,111,245,0.28)",
+                    color: "var(--text)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(155,111,245,0.42)";
-                    e.currentTarget.style.borderColor = "rgba(155,111,245,1)";
-                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.22), 0 8px 40px rgba(155,111,245,0.55)";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.38)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.9)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(155,111,245,0.18), 0 8px 40px rgba(155,111,245,0.55)";
                     e.currentTarget.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(155,111,245,0.22)";
-                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.6)";
-                    e.currentTarget.style.boxShadow = "0 2px 12px rgba(155,111,245,0.18)";
-                    e.currentTarget.style.color = "#E8E8F2";
+                    e.currentTarget.style.background = "rgba(155,111,245,0.08)";
+                    e.currentTarget.style.borderColor = "rgba(155,111,245,0.28)";
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.color = "var(--text)";
                   }}
                 >
                   Resume ↗
@@ -305,14 +304,14 @@ export default function Home() {
               className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
               style={{
                 background: "var(--surface)",
-                border: "1px solid var(--border)",
+                border: "1px solid rgba(32,211,234,0.28)",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.6)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.28)"; }}
             >
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: "radial-gradient(600px at 0% 100%, rgba(32,211,234,0.07), transparent 70%)" }}
+                className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "radial-gradient(600px at 0% 100%, rgba(32,211,234,0.12), transparent 70%)" }}
               />
               <span
                 className="absolute right-6 bottom-4 text-8xl font-black select-none pointer-events-none leading-none"
@@ -344,13 +343,13 @@ export default function Home() {
             <Link
               href="/personal"
               className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200"
-              style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
+              style={{ background: "var(--surface)", border: "1px solid rgba(244,114,182,0.28)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.6)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.28)"; }}
             >
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: "radial-gradient(400px at 100% 0%, rgba(244,114,182,0.08), transparent 70%)" }}
+                className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "radial-gradient(400px at 100% 0%, rgba(244,114,182,0.12), transparent 70%)" }}
               />
               <span
                 className="absolute right-6 bottom-4 text-8xl font-black select-none pointer-events-none leading-none"
@@ -381,7 +380,9 @@ export default function Home() {
               headline: "The full picture.",
               desc: "Story, background, and timeline.",
               color: "var(--accent)",
-              glow: "rgba(155,111,245,0.08)",
+              glow: "rgba(155,111,245,0.12)",
+              border: "rgba(155,111,245,0.28)",
+              borderHover: "rgba(155,111,245,0.6)",
             },
             {
               href: "/graphics",
@@ -390,7 +391,9 @@ export default function Home() {
               headline: "Design work.",
               desc: "Branding, visual identity, and art.",
               color: "#60A5FA",
-              glow: "rgba(96,165,250,0.07)",
+              glow: "rgba(96,165,250,0.12)",
+              border: "rgba(96,165,250,0.28)",
+              borderHover: "rgba(96,165,250,0.6)",
             },
             {
               href: "/play",
@@ -399,7 +402,9 @@ export default function Home() {
               headline: "The rest of me.",
               desc: "Writing, travel, and everything else.",
               color: "#34D399",
-              glow: "rgba(52,211,153,0.07)",
+              glow: "rgba(52,211,153,0.12)",
+              border: "rgba(52,211,153,0.28)",
+              borderHover: "rgba(52,211,153,0.6)",
             },
           ].map((s, i) => (
             <motion.div
@@ -413,12 +418,12 @@ export default function Home() {
               <Link
                 href={s.href}
                 className="block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36 transition-all duration-200"
-                style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--border-hover)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border)"; }}
+                style={{ background: "var(--surface)", border: `1px solid ${s.border}` }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = s.borderHover; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = s.border; }}
               >
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ background: `radial-gradient(300px at 0% 100%, ${s.glow}, transparent 70%)` }}
                 />
                 <span

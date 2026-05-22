@@ -53,7 +53,7 @@ export default function ContactWidget() {
         style={{
           background: "var(--accent)",
           color: "#fff",
-          boxShadow: "0 4px 24px rgba(155,111,245,0.35)",
+          boxShadow: "0 4px 28px rgba(155,111,245,0.55), 0 0 0 3px rgba(155,111,245,0.18)",
         }}
       >
         <span>{open ? "✕" : "✉"}</span>
