@@ -303,8 +303,8 @@ export default function Home() {
               href="/professional"
               className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200 bento-teal"
               style={{ background: "var(--surface)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.6)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(32,211,234,0.7)"; e.currentTarget.style.boxShadow = "0 0 0 1px rgba(32,211,234,0.15), 0 8px 40px rgba(32,211,234,0.18)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.boxShadow = ""; }}
             >
               <div
                 className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
@@ -341,8 +341,8 @@ export default function Home() {
               href="/personal"
               className="block relative overflow-hidden group rounded-2xl p-8 h-full min-h-48 transition-all duration-200 bento-pink"
               style={{ background: "var(--surface)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.6)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(244,114,182,0.7)"; e.currentTarget.style.boxShadow = "0 0 0 1px rgba(244,114,182,0.15), 0 8px 40px rgba(244,114,182,0.18)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.boxShadow = ""; }}
             >
               <div
                 className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
@@ -379,7 +379,8 @@ export default function Home() {
               color: "var(--accent)",
               glow: "rgba(155,111,245,0.12)",
               cardClass: "bento-purple",
-              borderHover: "rgba(155,111,245,0.6)",
+              borderHover: "rgba(155,111,245,0.7)",
+              shadowHover: "0 0 0 1px rgba(155,111,245,0.15), 0 8px 40px rgba(155,111,245,0.18)",
             },
             {
               href: "/graphics",
@@ -390,7 +391,8 @@ export default function Home() {
               color: "#60A5FA",
               glow: "rgba(96,165,250,0.12)",
               cardClass: "bento-blue",
-              borderHover: "rgba(96,165,250,0.6)",
+              borderHover: "rgba(96,165,250,0.7)",
+              shadowHover: "0 0 0 1px rgba(96,165,250,0.15), 0 8px 40px rgba(96,165,250,0.18)",
             },
             {
               href: "/play",
@@ -401,7 +403,8 @@ export default function Home() {
               color: "#34D399",
               glow: "rgba(52,211,153,0.12)",
               cardClass: "bento-green",
-              borderHover: "rgba(52,211,153,0.6)",
+              borderHover: "rgba(52,211,153,0.7)",
+              shadowHover: "0 0 0 1px rgba(52,211,153,0.15), 0 8px 40px rgba(52,211,153,0.18)",
             },
           ].map((s, i) => (
             <motion.div
@@ -416,8 +419,8 @@ export default function Home() {
                 href={s.href}
                 className={`block relative overflow-hidden group rounded-2xl p-6 h-full min-h-36 transition-all duration-200 ${s.cardClass}`}
                 style={{ background: "var(--surface)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = s.borderHover; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = s.borderHover; e.currentTarget.style.boxShadow = s.shadowHover; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.boxShadow = ""; }}
               >
                 <div
                   className="absolute inset-0 opacity-30 group-hover:opacity-100 transition-opacity duration-500"
