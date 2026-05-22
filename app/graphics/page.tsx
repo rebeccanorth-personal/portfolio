@@ -121,7 +121,7 @@ export default function Graphics() {
                 transition={{ delay: i * 0.07 }}
                 className="break-inside-avoid flex gap-2"
               >
-                {piece.pair.map((p) => (
+                {piece.pair!.map((p) => (
                   <div
                     key={p.title}
                     className="flex-1 rounded-2xl overflow-hidden group relative cursor-default"
