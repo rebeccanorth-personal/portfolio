@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const DOTS = 10;
+const DOTS = 6;
 
 export default function CursorTrail() {
   const dotsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -24,8 +24,8 @@ export default function CursorTrail() {
       let x = cursor.current.x;
       let y = cursor.current.y;
       positions.current.forEach((pos, i) => {
-        pos.x += (x - pos.x) * 0.22;
-        pos.y += (y - pos.y) * 0.22;
+        pos.x += (x - pos.x) * 0.38;
+        pos.y += (y - pos.y) * 0.38;
         const el = dotsRef.current[i];
         if (el) {
           el.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
