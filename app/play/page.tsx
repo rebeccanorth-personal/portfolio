@@ -57,7 +57,7 @@ const travel: TravelItem[] = [
   { src: "/travel/whistler.jpg", location: "Whistler, Canada" },
   { src: "/travel/vancouver.jpg", location: "Vancouver, Canada" },
   { src: "/travel/bend.png", location: "Bend, Oregon" },
-  { src: "/travel/mount-rainier.jpg", location: "Mount Rainier, Washington" },
+  { src: "/travel/rainier.jpg", location: "Mount Rainier, Washington" },
 ];
 
 function PhotoCard({ src, location }: TravelPhoto) {
