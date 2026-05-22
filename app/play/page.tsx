@@ -1,12 +1,100 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { writing } from "@/lib/content";
 
-const photoPlaceholders = Array.from({ length: 9 }, (_, i) => ({
-  id: i,
-  aspect: ["aspect-square", "aspect-[4/3]", "aspect-[3/4]"][i % 3],
-}));
+type TravelPhoto = { src: string; location: string };
+type TravelItem =
+  | TravelPhoto
+  | { pair: TravelPhoto[]; location: string }
+  | { triple: TravelPhoto[]; location: string };
+
+const travel: TravelItem[] = [
+  { src: "/travel/rio.jpg", location: "Rio de Janeiro, Brazil" },
+  { src: "/travel/sao-paulo.jpg", location: "São Paulo, Brazil" },
+  {
+    pair: [
+      { src: "/travel/buenos-aires-1.jpg", location: "Buenos Aires, Argentina" },
+      { src: "/travel/buenos-aires-2.jpg", location: "Buenos Aires, Argentina" },
+    ],
+    location: "Buenos Aires, Argentina",
+  },
+  { src: "/travel/seville.jpg", location: "Seville, Spain" },
+  { src: "/travel/cannes.jpg", location: "Cannes, France" },
+  {
+    pair: [
+      { src: "/travel/aix.jpg", location: "Aix-en-Provence, France" },
+      { src: "/travel/aix-lavender.jpg", location: "Aix-en-Provence, France" },
+    ],
+    location: "Aix-en-Provence, France",
+  },
+  {
+    pair: [
+      { src: "/travel/nice-1.jpg", location: "Nice, France" },
+      { src: "/travel/nice-2.jpg", location: "Nice, France" },
+    ],
+    location: "Nice, France",
+  },
+  {
+    triple: [
+      { src: "/travel/lagos-1.jpg", location: "Lagos, Portugal" },
+      { src: "/travel/lagos-2.jpg", location: "Lagos, Portugal" },
+      { src: "/travel/lagos-3.jpg", location: "Lagos, Portugal" },
+    ],
+    location: "Lagos, Portugal",
+  },
+  { src: "/travel/chefchaouen.jpg", location: "Chefchaouen, Morocco" },
+  { src: "/travel/tel-aviv.jpg", location: "Tel Aviv, Israel" },
+  {
+    pair: [
+      { src: "/travel/sedona-1.jpg", location: "Sedona, Arizona" },
+      { src: "/travel/sedona-2.jpg", location: "Sedona, Arizona" },
+    ],
+    location: "Sedona, Arizona",
+  },
+  { src: "/travel/scottsdale.jpg", location: "Scottsdale, Arizona" },
+  { src: "/travel/whistler.jpg", location: "Whistler, Canada" },
+  { src: "/travel/vancouver.jpg", location: "Vancouver, Canada" },
+  { src: "/travel/bend.png", location: "Bend, Oregon" },
+  {
+    pair: [
+      { src: "/travel/sequim-summit.jpg", location: "Sequim, Washington" },
+      { src: "/travel/sequim-2.jpg", location: "Sequim, Washington" },
+    ],
+    location: "Sequim, Washington",
+  },
+  { src: "/travel/mount-rainier.jpg", location: "Mount Rainier, Washington" },
+  { src: "/travel/monterey.jpg", location: "Monterey, California" },
+];
+
+function PhotoCard({ src, location }: TravelPhoto) {
+  return (
+    <div
+      className="rounded-2xl overflow-hidden group relative cursor-default"
+      style={{ border: "1px solid var(--border)" }}
+    >
+      <Image
+        src={src}
+        alt={location}
+        width={1200}
+        height={1600}
+        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+      <div
+        className="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)",
+        }}
+      >
+        <div className="px-3 pb-3">
+          <p className="text-xs font-bold leading-tight text-white">{location}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Play() {
   return (
@@ -35,7 +123,7 @@ export default function Play() {
       </motion.div>
 
       {/* Writing */}
-      <section className="mb-20">
+      <section className="mb-16">
         <p
           className="text-xs font-semibold tracking-widest uppercase mb-6"
           style={{ color: "var(--muted)" }}
@@ -78,17 +166,13 @@ export default function Play() {
                 <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
                   {article.excerpt}
                 </p>
-                <span
-                  className="inline-block mt-4 text-xs font-semibold"
-                  style={{ color: "#34D399" }}
-                >
+                <span className="inline-block mt-4 text-xs font-semibold" style={{ color: "#34D399" }}>
                   Read on Medium ↗
                 </span>
               </a>
             </motion.div>
           ))}
 
-          {/* Medium profile link */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,41 +207,101 @@ export default function Play() {
         </p>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {photoPlaceholders.map((p) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: p.id * 0.04 }}
-              className="break-inside-avoid"
-            >
-              <div
-                className={`card ${p.aspect} w-full flex items-center justify-center relative overflow-hidden group`}
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(52,211,153,0.08), rgba(155,111,245,0.05))",
-                  }}
-                />
-                <p className="text-xs relative z-10" style={{ color: "var(--border-hover)" }}>
-                  photo coming soon
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          {travel.map((item, i) => {
+            if ("triple" in item) {
+              return (
+                <motion.div
+                  key={item.location + "-triple"}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="break-inside-avoid flex gap-2"
+                >
+                  {item.triple.map((p, j) => (
+                    <div
+                      key={j}
+                      className="flex-1 rounded-xl overflow-hidden group relative cursor-default"
+                      style={{ border: "1px solid var(--border)" }}
+                    >
+                      <Image
+                        src={p.src}
+                        alt={p.location}
+                        width={600}
+                        height={800}
+                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                      <div
+                        className="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)",
+                        }}
+                      >
+                        <div className="px-2 pb-2">
+                          <p className="text-[10px] font-bold leading-tight text-white">{p.location}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              );
+            }
 
-        <motion.p
-          className="text-center text-sm mt-10"
-          style={{ color: "var(--muted)" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Photos coming soon. I bring a camera everywhere and use it on about 40% of trips. The other 60% I regret immediately.
-        </motion.p>
+            if ("pair" in item) {
+              return (
+                <motion.div
+                  key={item.location + "-pair"}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="break-inside-avoid flex gap-2"
+                >
+                  {item.pair.map((p, j) => (
+                    <div
+                      key={j}
+                      className="flex-1 rounded-xl overflow-hidden group relative cursor-default"
+                      style={{ border: "1px solid var(--border)" }}
+                    >
+                      <Image
+                        src={p.src}
+                        alt={p.location}
+                        width={800}
+                        height={1066}
+                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                      <div
+                        className="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 100%)",
+                        }}
+                      >
+                        <div className="px-2 pb-2">
+                          <p className="text-xs font-bold leading-tight text-white">{p.location}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              );
+            }
+
+            return (
+              <motion.div
+                key={item.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="break-inside-avoid"
+              >
+                <PhotoCard src={item.src} location={item.location} />
+              </motion.div>
+            );
+          })}
+        </div>
       </section>
     </div>
   );
