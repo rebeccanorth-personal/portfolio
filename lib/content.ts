@@ -229,7 +229,7 @@ export const allProjects = [
     company: "Freelance",
     period: "2024",
     type: "Freelance",
-    accent: "#F59E0B",
+    accent: "var(--teal)",
     coverImage: "/projects/alexruss-1.png",
     tags: ["Web Design", "Squarespace", "Visual Design", "Branding"],
     summary:
@@ -245,9 +245,9 @@ export const allProjects = [
         { step: "Launch", desc: "Shipped to alexrussacts.com. The site now serves as his primary casting and networking tool." },
       ],
       images: [
-        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.15), rgba(0,0,0,0.4))" },
-        { caption: "Recent Work Gallery", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.1), rgba(0,0,0,0.5))" },
-        { caption: "Headshots & Resume", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(0,0,0,0.45))" },
+        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(0,0,0,0.4))" },
+        { caption: "Recent Work Gallery", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
+        { caption: "Headshots & Resume", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(0,0,0,0.45))" },
       ],
     },
   },
