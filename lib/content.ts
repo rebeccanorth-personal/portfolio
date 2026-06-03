@@ -222,6 +222,36 @@ export const allProjects = [
     },
   },
   {
+    id: "alexruss",
+    name: "Alex Russ",
+    tagline: "Actor Portfolio Website",
+    role: "Designer & Developer",
+    company: "Freelance",
+    period: "2024",
+    type: "Freelance",
+    accent: "#F59E0B",
+    coverImage: "/projects/alexruss-1.png",
+    tags: ["Web Design", "Squarespace", "Visual Design", "Branding"],
+    summary:
+      "Designed and built a portfolio site for New York City actor Alex Russ — clean, dark, and cast-director-ready, showcasing his work, headshots, and resume in one place.",
+    metrics: [],
+    modal: {
+      overview:
+        "Alex needed a professional web presence that could go in front of casting directors, agents, and collaborators. The brief was simple: make it feel serious, make it feel him, and make it easy to update. I designed and built the full site on Squarespace — layout, typography, color palette, navigation structure, and content organization — resulting in a minimal dark aesthetic that lets his headshots and performance work speak for themselves.",
+      process: [
+        { step: "Brief", desc: "Understood the audience: casting directors and agents who need credentials fast. Prioritized headshot visibility, resume access, and a clear contact path above everything else." },
+        { step: "Design", desc: "Built a dark, minimal visual language — high contrast, serif wordmark, uncluttered layout. The aesthetic needed to feel professional without being corporate." },
+        { step: "Build", desc: "Developed the full site in Squarespace with custom CSS adjustments. Set up the gallery, resume PDF embed, and contact section so Alex can maintain it himself without any technical overhead." },
+        { step: "Launch", desc: "Shipped to alexrussacts.com. The site now serves as his primary casting and networking tool." },
+      ],
+      images: [
+        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.15), rgba(0,0,0,0.4))" },
+        { caption: "Recent Work Gallery", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.1), rgba(0,0,0,0.5))" },
+        { caption: "Headshots & Resume", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(245,158,11,0.12), rgba(0,0,0,0.45))" },
+      ],
+    },
+  },
+  {
     id: "sirius",
     name: "SiriusXM",
     tagline: "Station Schedule Redesign",
