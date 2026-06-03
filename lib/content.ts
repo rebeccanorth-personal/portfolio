@@ -16,7 +16,7 @@ export const currently = {
 export const about = {
   headline: "Growth PM. Designer. Builder.",
   taglines: ["Growth PM.", "Designer.", "Builder."],
-  bio: "Growth PM at Microsoft who can't help but prototype before writing a spec. I live in the space where data meets design, running experiments that move subscriber numbers by millions, then going home to build small tools for myself because I genuinely can't stop.",
+  bio: "Growth PM at Microsoft who can't help but prototype before writing a spec. I live in the space where data meets design, running experiments that move subscriber numbers by millions, then go home to build small tools for myself because I genuinely can't stop.",
   summary: "Growth Product Manager with a proven track record of driving acquisition, activation, and retention through data-driven experimentation, PLG strategies, and monetization initiatives. Experienced at scaling subscriber growth in consumer products while building 0→1 offerings, rapid testing frameworks, and optimized user journeys that deliver measurable business impact.",
   story: [
     "I'm a PM who can't help but prototype before I write a spec. Whether that makes me a better product manager or a very confused designer probably depends on the day, but it's meant I ship things that actually look like someone thought about them.",
