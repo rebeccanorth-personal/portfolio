@@ -223,7 +223,7 @@ export const allProjects = [
   },
   {
     id: "alexruss",
-    name: "Alex Russ",
+    name: "alexrussacts.com",
     tagline: "Actor Portfolio Website",
     role: "Designer & Developer",
     company: "Freelance",
