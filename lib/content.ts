@@ -245,9 +245,9 @@ export const allProjects = [
         { step: "Launch", desc: "Shipped to alexrussacts.com. The site now serves as his primary casting and networking tool." },
       ],
       images: [
-        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(0,0,0,0.4))" },
-        { caption: "Showcase & Reels", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
         { caption: "Headshots", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(0,0,0,0.45))" },
+        { caption: "Showcase & Reels", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
+        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(0,0,0,0.4))" },
       ],
     },
   },
