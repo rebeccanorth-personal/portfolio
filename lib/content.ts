@@ -246,8 +246,8 @@ export const allProjects = [
       ],
       images: [
         { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(0,0,0,0.4))" },
-        { caption: "Recent Work Gallery", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
-        { caption: "Headshots & Resume", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(0,0,0,0.45))" },
+        { caption: "Showcase & Reels", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
+        { caption: "Headshots", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(0,0,0,0.45))" },
       ],
     },
   },
