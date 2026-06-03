@@ -38,10 +38,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Drive end-to-end growth strategy for Consumer M365 in-app experiences through PLG and hypothesis-driven experiments. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation.",
-    metrics: [
-      { value: "20%", label: "YoY subscriber growth" },
-      { value: "18%", label: "trial conversion increase" },
-    ],
+    metrics: [],
     type: "full-time" as const,
   },
   {
@@ -53,9 +50,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Owned top-of-funnel acquisition for M365, redesigning the Windows onboarding to increase subscriptions and LTV. Built new infrastructure to accelerate experimentation velocity, enabling faster validation of growth hypotheses.",
-    metrics: [
-      { value: "7%", label: "MAU growth across Word, Excel, PowerPoint" },
-    ],
+    metrics: [],
     type: "full-time" as const,
   },
   {
@@ -67,10 +62,7 @@ export const experience = [
     location: "Redmond, WA",
     description:
       "Launched and optimized growth experiments across M365 FRE offer pages. Improved UX and redesigned Windows 11 acquisition flows.",
-    metrics: [
-      { value: "14%", label: "consumer subscription increase" },
-      { value: "10%", label: "paid activation rate increase" },
-    ],
+    metrics: [],
     type: "full-time" as const,
   },
   {
@@ -209,11 +201,7 @@ export const allProjects = [
     tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
     summary:
       "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure and shipped redesigns that moved subscription numbers by millions.",
-    metrics: [
-      { value: "20%", label: "YoY subscriber growth" },
-      { value: "18%", label: "trial conversion increase" },
-      { value: "7%", label: "MAU growth across Office apps" },
-    ],
+    metrics: [],
     modal: {
       overview:
         "Consumer M365 and Copilot growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior: why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
