@@ -38,7 +38,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Drive end-to-end growth strategy for Consumer M365 in-app experiences through PLG and hypothesis-driven experiments. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "full-time" as const,
   },
   {
@@ -50,7 +50,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Owned top-of-funnel acquisition for M365, redesigning the Windows onboarding to increase subscriptions and LTV. Built new infrastructure to accelerate experimentation velocity, enabling faster validation of growth hypotheses.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "full-time" as const,
   },
   {
@@ -62,7 +62,7 @@ export const experience = [
     location: "Redmond, WA",
     description:
       "Launched and optimized growth experiments across M365 FRE offer pages. Improved UX and redesigned Windows 11 acquisition flows.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "full-time" as const,
   },
   {
@@ -74,7 +74,7 @@ export const experience = [
     location: "Redmond, WA",
     description:
       "Led a team of engineers and designers to create a personalized Office upsell experience in the Windows onboarding process by leveraging user intent signals.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
   {
@@ -86,7 +86,7 @@ export const experience = [
     location: "Remote",
     description:
       "Expanded startup awareness and managed community growth. Shaped brand identity through cross-platform creative content creation.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
   {
@@ -98,7 +98,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Analyzed user data to develop tactical retention campaigns. Used competitive analysis to surface streaming app improvements.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
   {
@@ -110,7 +110,7 @@ export const experience = [
     location: "New York, NY",
     description:
       "Designed the company website and customer database. Created eCommerce additions to expand the platform's commercial capabilities.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
   {
@@ -122,7 +122,7 @@ export const experience = [
     location: "Ithaca, NY",
     description:
       "Built the website for Cornell's student-run grocery cooperative from design briefs: HTML, CSS, PHP, WordPress, plus a full product inventory list. Designed all branding and print materials in Illustrator and Photoshop.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "project" as const,
   },
   {
@@ -134,7 +134,7 @@ export const experience = [
     location: "Ithaca, NY",
     description:
       "Research assistant for the Design & Augmented Intelligence Lab. TA for Info 4240: Designing Technology for Social Impact. Web developer and graphic designer for Anabel's Grocery.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     type: "education" as const,
   },
 ];
@@ -201,7 +201,7 @@ export const allProjects = [
     tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
     summary:
       "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure and shipped redesigns that moved subscription numbers by millions.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
         "Consumer M365 and Copilot growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior: why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
@@ -234,7 +234,7 @@ export const allProjects = [
     tags: ["Web Design", "Squarespace", "Visual Design", "Branding"],
     summary:
       "Designed and built a portfolio site for New York City actor Alex Russ — clean, dark, and cast-director-ready, showcasing his work, headshots, and resume in one place.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
         "Alex needed a professional web presence that could go in front of casting directors, agents, and collaborators. The brief was simple: make it feel serious, make it feel him, and make it easy to update. I designed and built the full site on Squarespace — layout, typography, color palette, navigation structure, and content organization — resulting in a minimal dark aesthetic that lets his headshots and performance work speak for themselves.",
@@ -264,7 +264,7 @@ export const allProjects = [
     tags: ["UX Design", "Figma", "Prototyping"],
     summary:
       "Designed a website for the Customer Retention team, letting satellite radio listeners preview station schedules and find when their favorite shows air.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
         "The Customer Retention Marketing team had a clear need: give listeners a way to preview station schedules so they'd re-engage with content they were already paying for. I took the project from brief to prototype: six directions, two finalists, one shipped design.",
@@ -294,7 +294,7 @@ export const allProjects = [
     tags: ["Product Design", "Sketch", "HTML/CSS/JS"],
     summary:
       "When you travel, only big-box gyms show up in search. Every boutique studio and spin class stays invisible. I built the thing I wanted to exist.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
         "The problem was personal: I travel and I work out, and finding non-chain fitness options in an unfamiliar city was genuinely painful. I designed and coded a prototype aggregator that surfaces all local workout options in one search: classes, gyms, studios, everything.",
@@ -322,7 +322,7 @@ export const allProjects = [
     tags: ["Web Dev", "WordPress", "Branding", "Illustrator"],
     summary:
       "Cornell's student-run grocery cooperative needed a website and a brand identity from scratch. I built both.",
-    metrics: [],
+    metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
         "Anabel's Grocery opened in September 2017 to give Cornell students access to affordable food on campus. They needed a web presence immediately, and a brand that felt warm, student-made, and trustworthy. I handled the full build: site architecture, WordPress development, inventory system, and all visual identity and print materials.",
