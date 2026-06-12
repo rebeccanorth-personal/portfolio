@@ -10,6 +10,7 @@ const typeColors: Record<string, string> = {
   intern: "var(--teal)",
   education: "var(--pink)",
   project: "#60A5FA",
+  volunteer: "#34D399",
 };
 
 const typeLabels: Record<string, string> = {
@@ -17,6 +18,7 @@ const typeLabels: Record<string, string> = {
   intern: "Internship",
   education: "Education",
   project: "Project",
+  volunteer: "Volunteer",
 };
 
 export default function About() {

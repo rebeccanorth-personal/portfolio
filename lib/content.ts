@@ -99,7 +99,7 @@ export const experience = [
     description:
       "Built the website for Cornell's student-run grocery cooperative from design briefs: HTML, CSS, PHP, WordPress, plus a full product inventory list. Designed all branding and print materials in Illustrator and Photoshop.",
     metrics: [] as { value: string; label: string }[],
-    type: "project" as const,
+    type: "volunteer" as const,
   },
   {
     id: "cornell",
