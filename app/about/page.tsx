@@ -165,11 +165,13 @@ export default function About() {
                             {role.company}
                           </span>
                         </div>
-                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs mb-0.5" style={{ color: "var(--muted)" }}>
-                          <span className="font-semibold">{role.title}</span>
-                          {role.subtitle && (
-                            <span className="font-medium">{role.subtitle}</span>
-                          )}
+                        <div className="text-xs mb-0.5" style={{ color: "var(--muted)" }}>
+                          <span className="font-semibold">
+                            {role.title}{role.subtitle && !role.subtitle.includes("\n") ? ` — ${role.subtitle}` : ""}
+                          </span>
+                          {role.subtitle?.includes("\n") && role.subtitle.split("\n").map((line, i) => (
+                            <div key={i} className="font-medium">{line}</div>
+                          ))}
                         </div>
                         <div className="flex flex-wrap gap-3 text-xs" style={{ color: "var(--muted)" }}>
                           <span>{role.period}</span>

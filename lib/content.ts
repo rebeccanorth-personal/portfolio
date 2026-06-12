@@ -104,7 +104,7 @@ export const experience = [
   {
     id: "cornell",
     title: "B.S. Information Science",
-    subtitle: "Concentration: UX  ·  Minors: Business, Design & Environmental Analysis",
+    subtitle: "Concentration: UX\nMinors: Business, Design & Environmental Analysis",
     company: "Cornell University",
     period: "Aug 2016 – Dec 2019",
     location: "Ithaca, NY",
