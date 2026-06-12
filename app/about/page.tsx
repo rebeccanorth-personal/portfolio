@@ -47,7 +47,7 @@ export default function About() {
           >
             Hi, I&apos;m Rebecca.
           </h1>
-          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+          <p className="text-base font-medium leading-relaxed" style={{ color: "var(--text)" }}>
             Growth PM at Microsoft. Cornell Information Science. Five years of turning
             hypotheses into shipped product and watching the numbers move.
           </p>
@@ -87,8 +87,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.4 }}
-            className={i === 0 ? "text-lg font-medium leading-relaxed" : "text-base leading-relaxed"}
-            style={{ color: i === 0 ? "var(--text)" : "var(--muted)" }}
+            className="text-base leading-relaxed"
+            style={{ color: "var(--muted)" }}
           >
             {para}
           </motion.p>
