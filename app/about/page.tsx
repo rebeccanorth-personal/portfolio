@@ -181,12 +181,14 @@ export default function About() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3 ml-4">
-                        <span
-                          className="hidden sm:inline text-xs px-2 py-0.5 rounded-full"
-                          style={{ background: `${color}18`, color }}
-                        >
-                          {typeLabels[role.type]}
-                        </span>
+                        {role.type !== "volunteer" && (
+                          <span
+                            className="hidden sm:inline text-xs px-2 py-0.5 rounded-full"
+                            style={{ background: `${color}18`, color }}
+                          >
+                            {typeLabels[role.type]}
+                          </span>
+                        )}
                         <span
                           className="text-sm font-bold transition-all duration-200"
                           style={{

@@ -89,6 +89,31 @@ function PhotoCard({ src, location }: TravelPhoto) {
   );
 }
 
+function CarouselCard({ src, location }: TravelPhoto) {
+  return (
+    <div className="relative rounded-2xl overflow-hidden flex-none w-64" style={{ border: "1px solid var(--border)", aspectRatio: "3/4" }}>
+      <Image
+        src={src}
+        alt={location}
+        fill
+        className="object-cover"
+      />
+      <div
+        className="absolute inset-0 flex flex-col justify-end"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)" }}
+      >
+        <p className="px-3 pb-3 text-xs font-bold text-white">{location}</p>
+      </div>
+    </div>
+  );
+}
+
+const flatPhotos: TravelPhoto[] = travel.flatMap((item) => {
+  if ("triple" in item) return item.triple;
+  if ("pair" in item) return item.pair;
+  return [item];
+});
+
 export default function Play() {
   return (
     <div className="min-h-screen pt-20 pb-12 px-6 max-w-5xl mx-auto">
@@ -199,7 +224,22 @@ export default function Play() {
           Travel photography
         </p>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        {/* Mobile: horizontal snap carousel */}
+        <div className="sm:hidden -mx-6">
+          <div
+            className="flex gap-3 overflow-x-auto px-6 pb-4"
+            style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+          >
+            {flatPhotos.map((photo) => (
+              <div key={photo.src} style={{ scrollSnapAlign: "start" }}>
+                <CarouselCard src={photo.src} location={photo.location} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: masonry */}
+        <div className="hidden sm:block columns-2 lg:columns-3 gap-4 space-y-4">
           {travel.map((item, i) => {
             if ("triple" in item) {
               return item.triple.map((p, j) => (
@@ -215,7 +255,6 @@ export default function Play() {
                 </motion.div>
               ));
             }
-
             if ("pair" in item) {
               return item.pair.map((p, j) => (
                 <motion.div
@@ -230,7 +269,6 @@ export default function Play() {
                 </motion.div>
               ));
             }
-
             return (
               <motion.div
                 key={item.src}
