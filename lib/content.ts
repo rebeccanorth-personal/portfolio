@@ -92,8 +92,8 @@ export const experience = [
   {
     id: "anabels-exp",
     title: "Web Developer & Graphic Designer",
-    subtitle: "Anabel's Grocery, Cornell Co-op",
-    company: "Cornell University",
+    subtitle: "",
+    company: "Anabel's Grocery",
     period: "2017",
     location: "Ithaca, NY",
     description:
