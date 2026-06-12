@@ -157,7 +157,7 @@ export default function About() {
                       }}
                     >
                       <div className="flex-1 min-w-0">
-                        <div className="mb-0.5">
+                        <div className="mb-1">
                           <span
                             className="text-sm font-bold"
                             style={{ color: "var(--text)" }}
@@ -165,15 +165,13 @@ export default function About() {
                             {role.company}
                           </span>
                         </div>
-                        {role.subtitle && (
-                          <div className="mb-1">
-                            <span className="text-xs font-medium" style={{ color: "var(--muted)" }}>
-                              {role.subtitle}
-                            </span>
-                          </div>
-                        )}
-                        <div className="flex flex-wrap gap-3 text-xs" style={{ color: "var(--muted)" }}>
+                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs mb-0.5" style={{ color: "var(--muted)" }}>
                           <span className="font-semibold">{role.title}</span>
+                          {role.subtitle && (
+                            <span className="font-medium">{role.subtitle}</span>
+                          )}
+                        </div>
+                        <div className="flex flex-wrap gap-3 text-xs" style={{ color: "var(--muted)" }}>
                           <span>{role.period}</span>
                           <span>{role.location}</span>
                         </div>
