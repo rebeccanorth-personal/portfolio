@@ -19,11 +19,9 @@ export const about = {
   bio: "Growth PM at Microsoft specializing in acquisition, activation, and retention for consumer subscription products. I live at the intersection of data and design — running experiments, scaling growth through PLG and 0→1 launches, and using AI daily to work faster and build better.",
   summary: "Growth Product Manager specializing in acquisition, activation, and retention for consumer subscription products, with a track record of scaling growth through PLG, experimentation, and 0→1 launches. A heavy AI practitioner who uses it daily, from writing specs and analyzing data to prototyping and shipping internal tools.",
   story: [
-    "I'm a PM who can't help but prototype before I write a spec. Whether that makes me a better product manager or a very excited designer probably depends on the day, but it's meant I ship things that actually look like someone thought about them.",
-    "I grew up in Information Science at Cornell, which is a polite way of saying I spent four years arguing about whether good design is discovered or invented. (Still arguing, for the record.)",
-    "At Microsoft I found my home in growth: that scrappy, hypothesis-driven corner of product where you're constantly interrogating why users do what they do, then building small experiments that sometimes move enormous numbers. I've grown M365 subscriber counts by millions. I still get unreasonably excited when a conversion rate ticks up by half a point.",
-    "I'm also deeply bought into AI as a way to work, not just as a PM on a Copilot growth team, but personally. I use it to move faster, think through problems, and build things I wouldn't have been able to ship alone. This portfolio is a good example of that.",
-    "Outside of work I travel the world, lift weights, see live music whenever I can, and can never be found without my Kindle. I believe the best PMs are relentlessly curious about everything, and I'm still very much proving that theory.",
+    "I'm a PM who can't help but prototype before I write a spec. My background is in Information Science at Cornell with a concentration in UX — the intersection of technology, design, and human behavior that shapes how I approach every product decision.",
+    "At Microsoft I found my home in growth: running experiments, interrogating user behavior, and building the infrastructure to do it faster. I'm also deeply bought into AI as a way to work — I use it daily to move faster, think through problems, and ship things I couldn't have built alone.",
+    "Outside of work: traveling with a camera, lifting weights, live music, and never without a Kindle.",
   ],
 };
 

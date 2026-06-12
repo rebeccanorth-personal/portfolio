@@ -32,7 +32,7 @@ export default function About() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12"
+        className="mb-6 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10"
       >
         <div className="flex-1">
           <p
@@ -57,10 +57,10 @@ export default function About() {
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
-              width: 220,
-              height: 260,
+              width: 160,
+              height: 190,
               border: "1px solid var(--border)",
-              boxShadow: "0 12px 36px rgba(0,0,0,0.3)",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
             }}
           >
             <Image
@@ -88,7 +88,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.4 }}
             className="text-base leading-relaxed"
-            style={{ color: i === 0 ? "var(--text)" : "var(--muted)" }}
+            style={{ color: "var(--muted)" }}
           >
             {para}
           </motion.p>
