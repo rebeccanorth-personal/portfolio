@@ -87,8 +87,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08, duration: 0.4 }}
-            className="text-base leading-relaxed"
-            style={{ color: "var(--muted)" }}
+            className={i === 0 ? "text-lg font-medium leading-relaxed" : "text-base leading-relaxed"}
+            style={{ color: i === 0 ? "var(--text)" : "var(--muted)" }}
           >
             {para}
           </motion.p>
@@ -182,8 +182,8 @@ export default function About() {
                       </div>
                       <div className="flex items-center gap-3 ml-4">
                         <span
-                          className="hidden sm:inline text-xs"
-                          style={{ color: role.type === "volunteer" ? color : "var(--muted)" }}
+                          className="hidden sm:inline text-xs font-medium"
+                          style={{ color }}
                         >
                           {typeLabels[role.type]}
                         </span>

@@ -19,9 +19,9 @@ export const about = {
   bio: "Growth PM at Microsoft specializing in acquisition, activation, and retention for consumer subscription products. I live at the intersection of data and design — running experiments, scaling growth through PLG and 0→1 launches, and using AI daily to work faster and build better.",
   summary: "Growth Product Manager specializing in acquisition, activation, and retention for consumer subscription products, with a track record of scaling growth through PLG, experimentation, and 0→1 launches. A heavy AI practitioner who uses it daily, from writing specs and analyzing data to prototyping and shipping internal tools.",
   story: [
-    "I'm a PM who can't help but prototype before I write a spec. My background is in Information Science at Cornell with a concentration in UX — the intersection of technology, design, and human behavior that shapes how I approach every product decision.",
-    "At Microsoft I found my home in growth: running experiments, interrogating user behavior, and building the infrastructure to do it faster. I'm also deeply bought into AI as a way to work — I use it daily to move faster, think through problems, and ship things I couldn't have built alone.",
-    "Outside of work: traveling with a camera, lifting weights, live music, and never without a Kindle.",
+    "I'm a PM who can't help but prototype before I write a spec. My background is in Information Science at Cornell with a concentration in UX, the intersection of technology, design, and human behavior that shapes how I approach every product decision.",
+    "At Microsoft I found my home in growth: running experiments, interrogating user behavior, and building the infrastructure to do it faster. I'm also deeply bought into AI as a way to work. I use it daily to move faster, think through problems, and ship things I couldn't have built alone.",
+    "Outside of work: I travel with my camera, walk miles around NYC, go to too many concerts, and am never without a Kindle.",
   ],
 };
 
