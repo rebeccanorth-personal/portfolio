@@ -16,8 +16,8 @@ export const currently = {
 export const about = {
   headline: "Growth PM. Designer. Builder.",
   taglines: ["Growth PM.", "Designer.", "Builder."],
-  bio: "Growth PM at Microsoft who can't help but prototype before writing a spec. I live in the space where data meets design, running experiments that move subscriber numbers by millions, then go home to build small tools for myself because I genuinely can't stop.",
-  summary: "Growth Product Manager with a proven track record of driving acquisition, activation, and retention through data-driven experimentation, PLG strategies, and monetization initiatives. Experienced at scaling subscriber growth in consumer products while building 0→1 offerings, rapid testing frameworks, and optimized user journeys that deliver measurable business impact.",
+  bio: "Growth PM at Microsoft specializing in acquisition, activation, and retention for consumer subscription products. I live at the intersection of data and design — running experiments, scaling growth through PLG and 0→1 launches, and using AI daily to work faster and build better.",
+  summary: "Growth Product Manager specializing in acquisition, activation, and retention for consumer subscription products, with a track record of scaling growth through PLG, experimentation, and 0→1 launches. A heavy AI practitioner who uses it daily, from writing specs and analyzing data to prototyping and shipping internal tools.",
   story: [
     "I'm a PM who can't help but prototype before I write a spec. Whether that makes me a better product manager or a very excited designer probably depends on the day, but it's meant I ship things that actually look like someone thought about them.",
     "I grew up in Information Science at Cornell, which is a polite way of saying I spent four years arguing about whether good design is discovered or invented. (Still arguing, for the record.)",
@@ -32,12 +32,12 @@ export const experience = [
   {
     id: "ms-growth",
     title: "Product Manager 2",
-    subtitle: "Consumer Copilot Growth",
+    subtitle: "M365 & Copilot Subscriber Growth",
     company: "Microsoft",
     period: "May 2025 – Present",
     location: "New York, NY",
     description:
-      "Drive end-to-end growth strategy for Consumer M365 in-app experiences through PLG and hypothesis-driven experiments. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation.",
+      "Drive end-to-end growth strategy for Consumer M365 and Copilot experiences that improve retention and subscriber growth. Own the checkout experience, optimizing conversion across the purchase funnel. Revamp the MVP trial journey to improve activation and boost paid conversion rates, while building a scalable framework for rapid experimentation. Launched a 0→1 EDU SKU to test new market segments.",
     metrics: [] as { value: string; label: string }[],
     type: "full-time" as const,
   },
@@ -49,7 +49,7 @@ export const experience = [
     period: "Sep 2022 – Apr 2025",
     location: "New York, NY",
     description:
-      "Owned top-of-funnel acquisition for M365, redesigning the Windows onboarding to increase subscriptions and LTV. Built new infrastructure to accelerate experimentation velocity, enabling faster validation of growth hypotheses.",
+      "Owned top-of-funnel acquisition for M365, redesigning the Windows onboarding to increase subscriptions and LTV. Built new infrastructure to accelerate experimentation velocity, enabling faster validation of growth hypotheses. Scaled engagement strategy that grew free desktop app MAU across Word, Excel, and PowerPoint.",
     metrics: [] as { value: string; label: string }[],
     type: "full-time" as const,
   },
@@ -73,19 +73,7 @@ export const experience = [
     period: "Jun – Aug 2019",
     location: "Redmond, WA",
     description:
-      "Led a team of engineers and designers to create a personalized Office upsell experience in the Windows onboarding process by leveraging user intent signals.",
-    metrics: [] as { value: string; label: string }[],
-    type: "intern" as const,
-  },
-  {
-    id: "romer",
-    title: "Marketing Intern",
-    subtitle: "",
-    company: "Romer",
-    period: "Jan – Jun 2020",
-    location: "Remote",
-    description:
-      "Expanded startup awareness and managed community growth. Shaped brand identity through cross-platform creative content creation.",
+      "Led a team of engineers and designers to create a personalized Office upsell experience in the Windows onboarding process by utilizing user intent.",
     metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
@@ -97,19 +85,7 @@ export const experience = [
     period: "Jun – Aug 2018",
     location: "New York, NY",
     description:
-      "Analyzed user data to develop tactical retention campaigns. Used competitive analysis to surface streaming app improvements.",
-    metrics: [] as { value: string; label: string }[],
-    type: "intern" as const,
-  },
-  {
-    id: "snap",
-    title: "Product Design Intern",
-    subtitle: "",
-    company: "SNAPWellness",
-    period: "Jun – Aug 2018",
-    location: "New York, NY",
-    description:
-      "Designed the company website and customer database. Created eCommerce additions to expand the platform's commercial capabilities.",
+      "Analyzed data to strategically develop tactical campaigns to retain current users. Used competitive analysis research to improve streaming app and gain subscribers.",
     metrics: [] as { value: string; label: string }[],
     type: "intern" as const,
   },
@@ -200,7 +176,7 @@ export const allProjects = [
     accent: "var(--teal)",
     tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
     summary:
-      "Five years owning top-of-funnel acquisition and subscriber lifecycle for M365 Consumer across Windows surfaces. Built experimentation infrastructure and shipped redesigns that moved subscription numbers by millions.",
+      "Five years owning acquisition, activation, and retention for M365 Consumer and Copilot across Windows surfaces. Built experimentation infrastructure, launched 0→1 products, and shipped redesigns that scaled subscriber growth.",
     metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
