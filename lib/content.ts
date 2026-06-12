@@ -21,7 +21,7 @@ export const about = {
   story: [
     "I'm a PM who can't help but prototype before I write a spec. My background is in Information Science at Cornell with a concentration in UX, the intersection of technology, design, and human behavior that shapes how I approach every product decision.",
     "At Microsoft I found my home in growth: running experiments, interrogating user behavior, and building the infrastructure to do it faster. I'm also deeply bought into AI as a way to work. I use it daily to move faster, think through problems, and ship things I couldn't have built alone.",
-    "Outside of work: I travel with my camera, walk miles around NYC, go to too many concerts, and am never without a Kindle.",
+    "Away from the screen I'm usually somewhere with my camera, walking miles around the city, at a concert, or deep in a book.",
   ],
 };
 
