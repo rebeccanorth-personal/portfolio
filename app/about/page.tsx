@@ -166,7 +166,7 @@ export default function About() {
                           </span>
                           {role.subtitle && (
                             <span className="text-sm italic" style={{ color: color }}>
-                              · {role.subtitle}
+                              {role.subtitle}
                             </span>
                           )}
                         </div>
