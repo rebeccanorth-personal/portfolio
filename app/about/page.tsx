@@ -48,7 +48,7 @@ export default function About() {
             Hi, I&apos;m Rebecca.
           </h1>
           <p className="text-base font-medium leading-relaxed" style={{ color: "var(--text)" }}>
-            Growth PM at Microsoft. Cornell Information Science. Five years of turning
+            Growth PM at Microsoft. Cornell Information Science. Six years of turning
             hypotheses into shipped product and watching the numbers move.
           </p>
         </div>

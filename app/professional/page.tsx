@@ -64,7 +64,7 @@ export default function Professional() {
             Work & projects
           </h1>
           <p className="text-lg max-w-2xl" style={{ color: "var(--muted)" }}>
-            Five years at Microsoft growing Consumer M365 and Copilot, plus product design and development projects from earlier in my career.
+            Six years at Microsoft growing Consumer M365 and Copilot, plus product design and development projects from earlier in my career.
           </p>
         </motion.div>
 
@@ -159,7 +159,7 @@ export default function Professional() {
               </p>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
-                  { title: "PM2: Subscriber Growth & Lifecycle", period: "May 2025 – Present", location: "New York, NY" },
+                  { title: "PM2: M365 & Copilot Subscriber Growth", period: "May 2025 – Present", location: "New York, NY" },
                   { title: "PM2: First Run Experiences", period: "Sep 2022 – Apr 2025", location: "New York, NY" },
                   { title: "Product Manager", period: "Sep 2020 – Aug 2022", location: "Redmond, WA" },
                   { title: "Program Manager Intern", period: "Jun – Aug 2019", location: "Redmond, WA" },

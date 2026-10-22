@@ -1,14 +1,14 @@
 // ── Update these whenever they change ─────────────────────────────────────────
 export const currently = {
   listening: {
-    artist: "MUNA",
-    track: "Dancing On The Wall",
-    link: "https://open.spotify.com/track/3x4HQHF6oY2yKtIGF2kTJz",
+    artist: "Ashe",
+    track: "Funeral",
+    link: "https://open.spotify.com/search/Funeral%20Ashe",
   },
   reading: {
-    title: "The Rachel Incident",
-    author: "Caroline O'Donoghue",
-    link: "https://www.goodreads.com/book/show/62039271-the-rachel-incident",
+    title: "Fruit Fly",
+    author: "Josh Silver",
+    link: "https://www.goodreads.com/book/show/243596291-fruit-fly",
   },
 };
 
@@ -174,7 +174,7 @@ export const allProjects = [
     accent: "var(--teal)",
     tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
     summary:
-      "Five years owning acquisition, activation, and retention for M365 Consumer and Copilot across Windows surfaces. Built experimentation infrastructure, launched 0→1 products, and shipped redesigns that scaled subscriber growth.",
+      "Six years owning acquisition, activation, and retention for M365 Consumer and Copilot across Windows surfaces. Built experimentation infrastructure, launched 0→1 products, and shipped redesigns that scaled subscriber growth.",
     metrics: [] as { value: string; label: string }[],
     modal: {
       overview:
@@ -318,22 +318,26 @@ export const allProjects = [
 export const chatSystemPrompt = `You are a friendly assistant on Rebecca North's portfolio website. Answer questions about Rebecca's background, experience, projects, and skills. Be warm, concise, and direct; two to four sentences max unless more detail is genuinely needed.
 
 About Rebecca:
-- Growth Product Manager at Microsoft (PM2 - Consumer Copilot Growth, May 2025–Present, NYC)
+- Growth Product Manager at Microsoft (PM2 - M365 & Copilot Subscriber Growth, May 2025–Present, NYC)
 - Previous: PM2 - First Run Experiences at Microsoft (Sep 2022–Apr 2025)
 - Previous: Product Manager at Microsoft (Sep 2020–Aug 2022, Redmond)
 - Internships: Microsoft Program Manager (Summer 2019), SiriusXM Customer Retention (Summer 2018)
 - Education: Cornell University, B.S. Information Science, UX concentration, Class of 2019
 - Minors: Business, Design & Environmental Analysis
 
-Key impact:
-- 20% YoY M365 Consumer subscriber growth
-- 7% MAU growth across Word, Excel, PowerPoint
-- 14% subscription increase via UX improvements
-- 10% paid activation increase via Windows 11 redesign
+Focus areas:
+- Owns checkout and the trial journey for Consumer M365 and Copilot: conversion, activation, and paid retention
+- Built experimentation infrastructure to speed up validating growth hypotheses
+- Launched a 0→1 EDU SKU to test new market segments
+- Previously redesigned Windows onboarding (OOBE) acquisition flows and grew free desktop app engagement across Word, Excel, and PowerPoint
+
+Do not share specific performance numbers or percentages for Rebecca's Microsoft work; they are under NDA. If asked about metrics, say she's happy to talk through impact in conversation.
 
 Skills: Growth PM, PLG, A/B experimentation, data analysis, Figma, Photoshop, Illustrator, HTML, CSS, JavaScript
 
-Personal projects: plan-my-week (macOS automation), lift+log (workout PWA), lolla-schedule (festival planner)
+Personal projects: plan-my-week (macOS automation), lift+log (workout PWA), Lollapalooza App (festival planner)
+
+Freelance and earlier design work: alexrussacts.com (actor portfolio site), SiriusXM station schedule redesign, Sweat in the City (travel fitness aggregator), Anabel's Grocery (website and brand for Cornell's student grocery co-op)
 
 Writing: Medium @rebeccanorth — "Yes And-ing to Success" (improv lessons for the workplace)
 

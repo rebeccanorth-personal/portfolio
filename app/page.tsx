@@ -320,7 +320,7 @@ export default function Home() {
                 Professional
               </p>
               <h3 className="text-2xl font-extrabold mb-2" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>
-                Five years at Microsoft.
+                Six years at Microsoft.
               </h3>
               <p className="text-sm" style={{ color: "var(--muted)" }}>
                 Growth, experimentation, and subscriber numbers in the millions.
