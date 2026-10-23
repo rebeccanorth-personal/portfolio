@@ -24,16 +24,16 @@ export const metadata: Metadata = {
   description:
     "UX PM who thinks like a designer. Six years on growth at Microsoft. Cornell Information Science.",
   openGraph: {
-    title: "Rebecca North",
-    description: "Growth PM. Designer. Builder.",
+    title: "Rebecca North — Growth PM. Designer. Builder.",
+    description: "A PM who thinks like a designer. See my work, play with the stickers, say hi.",
     url: "https://rebeccanorth.me",
     siteName: "Rebecca North",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rebecca North",
-    description: "Growth PM. Designer. Builder.",
+    title: "Rebecca North — Growth PM. Designer. Builder.",
+    description: "A PM who thinks like a designer. See my work, play with the stickers, say hi.",
     images: ["/opengraph-image"],
   },
 };
