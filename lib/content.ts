@@ -113,37 +113,124 @@ export const experience = [
   },
 ];
 
+// ── Professional work (Work page rows) ─────────────────────────────────────────
+// shots[0] sits in the back of the card, shots[1] in front, shots[2] fans in on hover
+export type Project = {
+  id: string;
+  name: string;
+  category: string;
+  role: string;
+  tags: string[];
+  overview: string;
+  process: { step: string; desc: string }[];
+  shots: { src: string; caption: string }[];
+  link?: string;
+};
+
+export const professionalProjects: Project[] = [
+  {
+    id: "alexruss",
+    name: "alexrussacts.com",
+    category: "Web design, Freelance",
+    role: "Designer & Developer · Freelance · 2024",
+    tags: ["Web Design", "Squarespace", "Visual Design", "Branding"],
+    overview:
+      "Alex needed a professional web presence that could go in front of casting directors, agents, and collaborators. The brief was simple: make it feel serious, make it feel him, and make it easy to update. I designed and built the full site on Squarespace (layout, typography, color palette, navigation and content structure), resulting in a minimal dark aesthetic that lets his headshots and performance work speak for themselves.",
+    process: [
+      { step: "Brief", desc: "Casting directors and agents need credentials fast, so headshots, resume and contact came first." },
+      { step: "Design", desc: "A dark, minimal visual language with high contrast and a serif wordmark." },
+      { step: "Build", desc: "Built in Squarespace with custom CSS so Alex can maintain it himself." },
+      { step: "Launch", desc: "Shipped to alexrussacts.com, now his main casting and networking tool." },
+    ],
+    shots: [
+      { src: "/projects/alexruss-2.png", caption: "Showcase & reels" },
+      { src: "/projects/alexruss-3.png", caption: "Headshots" },
+      { src: "/projects/alexruss-1.png", caption: "Homepage: about" },
+    ],
+    link: "https://alexrussacts.com",
+  },
+  {
+    id: "sweat",
+    name: "Sweat in the City",
+    category: "Product design, Cornell",
+    role: "Product Designer + Developer · Cornell · 2018",
+    tags: ["Product Design", "Sketch", "HTML/CSS/JS"],
+    overview:
+      "When you travel, only big-box gyms show up in search, and every boutique studio and spin class stays invisible. I designed and coded a prototype aggregator that surfaces all local workout options in one search.",
+    process: [
+      { step: "Problem", desc: "Chains dominate search; boutique studios are invisible to travelers." },
+      { step: "Design", desc: "Information architecture and key screens in Sketch, built for scanning on a phone." },
+      { step: "Build", desc: "Coded in HTML, CSS, JavaScript and PHP, real enough to demo end to end." },
+    ],
+    shots: [
+      { src: "/projects/sweat-1.png", caption: "Homepage: boutique fitness discovery" },
+      { src: "/projects/sweat-2.png", caption: "What we do" },
+    ],
+  },
+  {
+    id: "anabels",
+    name: "Anabel's Grocery",
+    category: "Web + brand, Cornell",
+    role: "Developer + Graphic Designer · Cornell · 2017",
+    tags: ["Web Dev", "WordPress", "Branding", "Illustrator"],
+    overview:
+      "Anabel's Grocery opened in 2017 to give Cornell students affordable food on campus. They needed a website right away and a brand that felt warm, student-made and trustworthy. I built the site, the inventory list and all the visual identity and print materials.",
+    process: [
+      { step: "Scope", desc: "A site students would visit to check inventory, and an authentic co-op brand." },
+      { step: "Brand", desc: "Logo, palette, type and tone in Illustrator, plus campus print pieces." },
+      { step: "Build", desc: "WordPress site with a full inventory list, built from design briefs." },
+      { step: "Launch", desc: "Shipped at opening, maintainable by non-technical student staff." },
+    ],
+    shots: [
+      { src: "/projects/anabels-1.png", caption: "Our impact" },
+      { src: "/projects/anabels-2.png", caption: "Our suppliers" },
+    ],
+  },
+];
+
+// ── Graphics: two squares beside each professional project ─────────────────────
+// The top square in each row sits on a colored tile. "logo" pieces are transparent masks,
+// so they take the ink color of light or dark mode
+export const graphics = [
+  { src: "/graphics/cut/lb-card.png", title: "LB Wedding", desc: "Custom playing cards for a party favor" },
+  { src: "/graphics/cut/juliet.png", title: "Juliet Kopel", desc: "Business card for a chemical engineer" },
+  { src: "/graphics/cut/fox-hat.png", title: "The Fox's Hat", desc: "Merch for the Fox's party" },
+  { src: "/graphics/cut/es-logo.png", title: "ES Logo", desc: "A logo for Eric, who loves to travel", logo: true },
+  { src: "/graphics/cut/sd-mono.png", title: "S&D Monogram", desc: "Engagement party logo", logo: true },
+  { src: "/graphics/cut/sd-sign.png", title: "S&D Engagement Sign", desc: "Welcome sign for an engagement party" },
+];
+
 // ── Personal projects ──────────────────────────────────────────────────────────
 export const personalProjects = [
   {
     name: "plan-my-week",
     tagline: "Weekly calendar automation for macOS",
+    line: "Plans your week into Apple Calendar every Sunday.",
     description:
       "CLI tool that walks through your week day by day and creates Apple Calendar events via AppleScript. Fires every Sunday at 9 AM via a launchd LaunchAgent. Pure Python, no dependencies.",
     tags: ["Python", "AppleScript", "macOS", "Automation"],
     github: "https://github.com/rebeccanorth-personal/plan-my-week",
-    live: null,
-    accent: "#8B5CF6",
+    image: { src: "/projects/plan-my-week.jpg", caption: "A real run of the planner in Terminal" },
   },
   {
     name: "lift + log",
     tagline: "Workout and protein tracking PWA",
+    line: "Workout and protein tracker that logs to Sheets.",
     description:
       "Progressive web app for logging workouts and daily protein intake. Auto-tags sessions by type (Upper Body, Run, HIIT, etc.) and logs to Google Sheets for weekly Claude analysis.",
     tags: ["JavaScript", "PWA", "Google Sheets API"],
     github: "https://github.com/rebeccanorth-personal/lift-and-log",
-    live: null,
-    accent: "#22D3EE",
+    image: { src: "/projects/lift-and-log.jpg", caption: "A day of logged workouts and protein" },
   },
   {
     name: "Lollapalooza App",
     tagline: "Festival lineup planner with friends",
+    line: "Festival planner for building a schedule with friends.",
     description:
       "React app for building your Lollapalooza schedule. Browse the full lineup on a timeline, build your personal picks, coordinate with friends, detect conflicts, and share your schedule via a URL.",
     tags: ["React", "Vite", "PWA"],
     github: "https://github.com/rebeccanorth-personal/lolla-schedule",
-    live: null,
-    accent: "#F472B6",
+    image: { src: "/projects/lolla.jpg", caption: "Thursday lineup with a crew's picks" },
   },
 ];
 
@@ -160,161 +247,33 @@ export const writing = [
   },
 ];
 
-// ── All portfolio projects (Professional page) ─────────────────────────────────
-// images: src=null renders a styled placeholder; swap with a real path when ready
-export const allProjects = [
-  {
-    id: "microsoft",
-    name: "Microsoft 365",
-    tagline: "Growth & Acquisition",
-    role: "Product Manager → PM2",
-    company: "Microsoft",
-    period: "2019 – Present",
-    type: "Full-time",
-    accent: "var(--teal)",
-    tags: ["PLG", "Experimentation", "Acquisition", "0→1"],
-    summary:
-      "Six years owning acquisition, activation, and retention for M365 Consumer and Copilot across Windows surfaces. Built experimentation infrastructure, launched 0→1 products, and shipped redesigns that scaled subscriber growth.",
-    metrics: [] as { value: string; label: string }[],
-    modal: {
-      overview:
-        "Consumer M365 and Copilot growth sits at the intersection of product, design, and data. Every experiment starts with a hypothesis about user behavior: why does someone hesitate at the offer page? What framing converts a trial user into a paid subscriber? I've run hundreds of these experiments across Windows onboarding flows, in-app surfaces, and lifecycle touchpoints, each one building infrastructure and intuition for the next.",
-      process: [
-        { step: "Ideate", desc: "Start from user behavior the data surfaces. Identify problems and propose solutions that balance business impact, engineering cost, and user needs." },
-        { step: "Research", desc: "Pair qual research with telemetry to understand intent and friction points. Prioritize what matters." },
-        { step: "Design", desc: "Prototype before I spec. I use AI to iterate quickly and get to better design conversations with engineers sooner." },
-        { step: "Develop", desc: "Lead teams through planning and execution: every dependency visible, every engineer clear on the why." },
-        { step: "Experiment", desc: "Controlled rollouts, telemetry analysis, scorecard against hypothesis." },
-        { step: "Iterate", desc: "Good product is never done. Revisit, retest, improve." },
-      ],
-      images: [
-        { caption: "Windows OOBE: M365 Acquisition Flow", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(155,111,245,0.1))" },
-        { caption: "M365 Offer Page: UX Redesign", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.15), rgba(32,211,234,0.08))" },
-        { caption: "Trial Conversion: Lifecycle Optimization", src: null, gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(155,111,245,0.12))" },
-        { caption: "Experimentation Dashboard", src: null, gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.15))" },
-      ],
-    },
-  },
-  {
-    id: "alexruss",
-    name: "alexrussacts.com",
-    tagline: "Actor Portfolio Website",
-    role: "Designer & Developer",
-    company: "Freelance",
-    period: "2024",
-    type: "Freelance",
-    accent: "var(--teal)",
-    coverImage: "/projects/alexruss-1.png",
-    tags: ["Web Design", "Squarespace", "Visual Design", "Branding"],
-    summary:
-      "Designed and built a portfolio site for New York City actor Alex Russ — clean, dark, and cast-director-ready, showcasing his work, headshots, and resume in one place.",
-    metrics: [] as { value: string; label: string }[],
-    modal: {
-      overview:
-        "Alex needed a professional web presence that could go in front of casting directors, agents, and collaborators. The brief was simple: make it feel serious, make it feel him, and make it easy to update. I designed and built the full site on Squarespace — layout, typography, color palette, navigation structure, and content organization — resulting in a minimal dark aesthetic that lets his headshots and performance work speak for themselves.",
-      process: [
-        { step: "Brief", desc: "Understood the audience: casting directors and agents who need credentials fast. Prioritized headshot visibility, resume access, and a clear contact path above everything else." },
-        { step: "Design", desc: "Built a dark, minimal visual language — high contrast, serif wordmark, uncluttered layout. The aesthetic needed to feel professional without being corporate." },
-        { step: "Build", desc: "Developed the full site in Squarespace with custom CSS adjustments. Set up the gallery, resume PDF embed, and contact section so Alex can maintain it himself without any technical overhead." },
-        { step: "Launch", desc: "Shipped to alexrussacts.com. The site now serves as his primary casting and networking tool." },
-      ],
-      images: [
-        { caption: "Headshots", src: "/projects/alexruss-3.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.12), rgba(0,0,0,0.45))" },
-        { caption: "Showcase & Reels", src: "/projects/alexruss-2.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.1), rgba(0,0,0,0.5))" },
-        { caption: "Homepage: About", src: "/projects/alexruss-1.png", gradient: "linear-gradient(135deg, rgba(32,211,234,0.15), rgba(0,0,0,0.4))" },
-      ],
-    },
-  },
-  {
-    id: "sirius",
-    name: "SiriusXM",
-    tagline: "Station Schedule Redesign",
-    role: "Product Designer",
-    company: "SiriusXM",
-    period: "2018 · Internship",
-    type: "Internship",
-    accent: "var(--accent)",
-    coverImage: "/projects/sirius-xm.png",
-    tags: ["UX Design", "Figma", "Prototyping"],
-    summary:
-      "Designed a website for the Customer Retention team, letting satellite radio listeners preview station schedules and find when their favorite shows air.",
-    metrics: [] as { value: string; label: string }[],
-    modal: {
-      overview:
-        "The Customer Retention Marketing team had a clear need: give listeners a way to preview station schedules so they'd re-engage with content they were already paying for. I took the project from brief to prototype: six directions, two finalists, one shipped design.",
-      process: [
-        { step: "Brief", desc: "Analyzed the design brief to understand the core goal: reduce churn by surfacing content value before a subscriber considers canceling." },
-        { step: "Ideate", desc: "Generated six distinct website directions, each exploring a different content hierarchy and interaction model." },
-        { step: "Narrow", desc: "Evaluated all six against usability principles and business requirements. Reduced to two finalists for team review." },
-        { step: "Prototype", desc: "Built an interactive Figma prototype of the selected direction, screen by screen, interaction by interaction." },
-        { step: "Handoff", desc: "Presented to the team. Design was approved and sent to development." },
-      ],
-      images: [
-        { caption: "Station Schedule: Timeframe Filter", src: "/projects/sirius-1.png", gradient: "linear-gradient(135deg, rgba(155,111,245,0.12), rgba(244,114,182,0.08))" },
-        { caption: "Station Schedule: Program Grid", src: "/projects/sirius-2.png", gradient: "linear-gradient(135deg, rgba(155,111,245,0.1), rgba(32,211,234,0.1))" },
-      ],
-    },
-  },
-  {
-    id: "sweat",
-    name: "Sweat in the City",
-    tagline: "Travel Fitness Aggregator",
-    role: "Product Designer + Developer",
-    company: "Side project",
-    period: "2018 · Cornell",
-    type: "Side project",
-    accent: "var(--pink)",
-    coverImage: "/projects/sweat-in-the-city.png",
-    tags: ["Product Design", "Sketch", "HTML/CSS/JS"],
-    summary:
-      "When you travel, only big-box gyms show up in search. Every boutique studio and spin class stays invisible. I built the thing I wanted to exist.",
-    metrics: [] as { value: string; label: string }[],
-    modal: {
-      overview:
-        "The problem was personal: I travel and I work out, and finding non-chain fitness options in an unfamiliar city was genuinely painful. I designed and coded a prototype aggregator that surfaces all local workout options in one search: classes, gyms, studios, everything.",
-      process: [
-        { step: "Problem", desc: "Identified the gap through personal experience: major gym chains dominate search results, leaving boutique studios completely invisible to traveling users." },
-        { step: "Design", desc: "Sketched the information architecture and key screens in Sketch. Focused on making search fast and results scannable; you're usually looking on your phone in a hotel." },
-        { step: "Build", desc: "Coded the prototype in HTML, CSS, JavaScript, and PHP. Real enough to demo the full user flow end to end." },
-      ],
-      images: [
-        { caption: "Homepage: Boutique Fitness Discovery", src: "/projects/sweat-1.png", gradient: "linear-gradient(135deg, rgba(244,114,182,0.12), rgba(155,111,245,0.08))" },
-        { caption: "What Do We Do", src: "/projects/sweat-2.png", gradient: "linear-gradient(135deg, rgba(244,114,182,0.1), rgba(32,211,234,0.08))" },
-      ],
-    },
-  },
-  {
-    id: "anabels",
-    name: "Anabel's Grocery",
-    tagline: "Website & Brand Identity",
-    role: "Developer + Graphic Designer",
-    company: "Cornell",
-    period: "2017",
-    type: "Cornell",
-    accent: "#60A5FA",
-    coverImage: "/projects/anabels.png",
-    tags: ["Web Dev", "WordPress", "Branding", "Illustrator"],
-    summary:
-      "Cornell's student-run grocery cooperative needed a website and a brand identity from scratch. I built both.",
-    metrics: [] as { value: string; label: string }[],
-    modal: {
-      overview:
-        "Anabel's Grocery opened in September 2017 to give Cornell students access to affordable food on campus. They needed a web presence immediately, and a brand that felt warm, student-made, and trustworthy. I handled the full build: site architecture, WordPress development, inventory system, and all visual identity and print materials.",
-      process: [
-        { step: "Scope", desc: "Identified two core needs: a site students would actually visit to check inventory, and a brand identity that felt authentic to a student-run co-op." },
-        { step: "Brand", desc: "Designed the visual identity in Illustrator: logo, color palette, typography, and tone. Created promotional materials for campus distribution." },
-        { step: "Build", desc: "Coded the website from design briefs using HTML, CSS, PHP on WordPress. Built a full inventory list so students could check stock before making the trip." },
-        { step: "Launch", desc: "Shipped the site at store opening. Built to be maintained by non-technical student staff with minimal ongoing support." },
-      ],
-      images: [
-        { caption: "Our Impact", src: "/projects/anabels-1.png", position: "top", gradient: "linear-gradient(135deg, rgba(96,165,250,0.12), rgba(155,111,245,0.06))" },
-        { caption: "Our Suppliers", src: "/projects/anabels-2.png", position: "top", gradient: "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(32,211,234,0.06))" },
-      ],
-    },
-  },
+// ── Travel photography (Play page polaroids) ───────────────────────────────────
+export const travel = [
+  { src: "/travel/rio.jpg", location: "Rio de Janeiro, Brazil" },
+  { src: "/travel/sao-paulo.jpg", location: "São Paulo, Brazil" },
+  { src: "/travel/buenos-aires-1.jpg", location: "Buenos Aires, Argentina" },
+  { src: "/travel/buenos-aires-2.jpg", location: "Buenos Aires, Argentina" },
+  { src: "/travel/seville.jpg", location: "Seville, Spain" },
+  { src: "/travel/cannes.jpg", location: "Cannes, France" },
+  { src: "/travel/aix.jpg", location: "Aix-en-Provence, France" },
+  { src: "/travel/aix-lavender.jpg", location: "Aix-en-Provence, France" },
+  { src: "/travel/nice-1.jpg", location: "Nice, France" },
+  { src: "/travel/nice-2.jpg", location: "Nice, France" },
+  { src: "/travel/lagos-1.jpg", location: "Lagos, Portugal" },
+  { src: "/travel/lagos-2.jpg", location: "Lagos, Portugal" },
+  { src: "/travel/lagos-3.jpg", location: "Lagos, Portugal" },
+  { src: "/travel/chefchaouen.jpg", location: "Chefchaouen, Morocco" },
+  { src: "/travel/tel-aviv.jpg", location: "Tel Aviv, Israel" },
+  { src: "/travel/sedona-1.jpg", location: "Sedona, Arizona" },
+  { src: "/travel/sedona-2.jpg", location: "Sedona, Arizona" },
+  { src: "/travel/scottsdale.jpg", location: "Scottsdale, Arizona" },
+  { src: "/travel/whistler.jpg", location: "Whistler, Canada" },
+  { src: "/travel/vancouver.jpg", location: "Vancouver, Canada" },
+  { src: "/travel/bend.png", location: "Bend, Oregon" },
+  { src: "/travel/rainier.jpg", location: "Mount Rainier, Washington" },
+  { src: "/travel/monterey-ca.jpg", location: "Monterey, California" },
 ];
 
-// ── Chat system prompt ─────────────────────────────────────────────────────────
 export const chatSystemPrompt = `You are a friendly assistant on Rebecca North's portfolio website. Answer questions about Rebecca's background, experience, projects, and skills. Be warm, concise, and direct; two to four sentences max unless more detail is genuinely needed.
 
 About Rebecca:

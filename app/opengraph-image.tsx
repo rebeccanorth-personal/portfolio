@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Rebecca North — Growth PM & Designer";
+export const alt = "Rebecca North — Growth PM, Designer, Builder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default function Image() {
     (
       <div
         style={{
-          background: "#080812",
+          background: "#F4F2EE",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -31,14 +31,14 @@ export default function Image() {
         >
           <path
             d="M2 24 V2 H12 L17 7 V12 L12 17 H2 M10 17 L17 24"
-            stroke="#9B6FF5"
+            stroke="#FF6E4E"
             strokeWidth="2.8"
             strokeLinecap="square"
             strokeLinejoin="miter"
           />
           <path
             d="M23 24 V2 L38 24 V2"
-            stroke="#9B6FF5"
+            stroke="#FF6E4E"
             strokeWidth="2.8"
             strokeLinecap="square"
             strokeLinejoin="miter"
@@ -49,21 +49,21 @@ export default function Image() {
         <div
           style={{
             fontSize: 72,
-            fontWeight: 800,
-            color: "#E8E8F2",
+            fontWeight: 700,
+            color: "#0E0E0E",
             letterSpacing: "-2px",
             lineHeight: 1,
             marginBottom: 20,
           }}
         >
-          rebecca north
+          Rebecca North
         </div>
 
         {/* Tagline */}
         <div
           style={{
             fontSize: 28,
-            color: "#6868A0",
+            color: "#5E5B57",
             letterSpacing: "-0.5px",
           }}
         >
@@ -78,7 +78,7 @@ export default function Image() {
             left: 0,
             right: 0,
             height: 4,
-            background: "linear-gradient(90deg, #9B6FF5, #20D3EA)",
+            background: "linear-gradient(90deg, #FF8A3D, #FFA27F, #B7A2FF)",
           }}
         />
       </div>

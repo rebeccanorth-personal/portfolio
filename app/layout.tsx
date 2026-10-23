@@ -1,29 +1,28 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import CursorGlow from "@/components/CursorGlow";
-import CursorTrail from "@/components/CursorTrail";
-import ContactWidget from "@/components/ContactWidget";
-import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
+import Aura from "@/components/Aura";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import ContactForm from "@/components/ContactForm";
 
-const jakarta = Plus_Jakarta_Sans({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-plex-sans",
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Rebecca North — Growth PM & Designer",
+  metadataBase: new URL("https://rebeccanorth.me"),
+  title: "Rebecca North — Growth PM, Designer, Builder",
   description:
-    "Growth Product Manager at Microsoft. Cornell Information Science. Building products people actually want to use.",
+    "UX PM who thinks like a designer. Six years on growth at Microsoft. Cornell Information Science.",
   openGraph: {
     title: "Rebecca North",
     description: "Growth PM. Designer. Builder.",
@@ -39,21 +38,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// Runs before paint so the saved or system theme never flashes the wrong colors
+const themeScript = `try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen">
-        <ScrollProgress />
-        <CursorGlow />
-        <CursorTrail />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <ContactWidget />
+    <html lang="en" className={`${plexSans.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <Aura />
+        <SiteNav />
+        {children}
+        <SiteFooter />
+        <ContactForm />
       </body>
     </html>
   );
