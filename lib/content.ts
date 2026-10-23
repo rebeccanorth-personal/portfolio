@@ -203,6 +203,16 @@ export const graphics = [
 // ── Personal projects ──────────────────────────────────────────────────────────
 export const personalProjects = [
   {
+    name: "Lollapalooza App",
+    tagline: "Festival lineup planner with friends",
+    line: "Festival planner for building a schedule with friends.",
+    description:
+      "React app for building your Lollapalooza schedule. Browse the full lineup on a timeline, build your personal picks, coordinate with friends, detect conflicts, and share your schedule via a URL.",
+    tags: ["React", "Vite", "PWA"],
+    github: "https://github.com/rebeccanorth-personal/lolla-schedule",
+    image: { src: "/projects/lolla.jpg", caption: "Thursday lineup with a crew's picks" },
+  },
+{
     name: "plan-my-week",
     tagline: "Weekly calendar automation for macOS",
     line: "Plans your week into Apple Calendar every Sunday.",
@@ -221,16 +231,6 @@ export const personalProjects = [
     tags: ["JavaScript", "PWA", "Google Sheets API"],
     github: "https://github.com/rebeccanorth-personal/lift-and-log",
     image: { src: "/projects/lift-and-log.jpg", caption: "A day of logged workouts and protein" },
-  },
-  {
-    name: "Lollapalooza App",
-    tagline: "Festival lineup planner with friends",
-    line: "Festival planner for building a schedule with friends.",
-    description:
-      "React app for building your Lollapalooza schedule. Browse the full lineup on a timeline, build your personal picks, coordinate with friends, detect conflicts, and share your schedule via a URL.",
-    tags: ["React", "Vite", "PWA"],
-    github: "https://github.com/rebeccanorth-personal/lolla-schedule",
-    image: { src: "/projects/lolla.jpg", caption: "Thursday lineup with a crew's picks" },
   },
 ];
 
