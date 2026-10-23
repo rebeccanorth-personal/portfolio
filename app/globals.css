@@ -229,7 +229,8 @@ main.work .whead, main.work .wbody, main.play .whead, main.play .wbody { max-wid
 }
 
 /* Footer */
-.foot { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 22px clamp(18px, 4vw, 44px) 28px; border-top: 1px solid var(--f-line); font-size: 13px; color: var(--f-muted); }
+/* Centered, with room at the bottom so the Get in touch button never covers the links */
+.foot { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; text-align: center; padding: 24px clamp(18px, 4vw, 44px) 84px; border-top: 1px solid var(--f-line); font-size: 13px; color: var(--f-muted); }
 .foot nav { display: flex; gap: 18px; }
 .foot a { text-decoration: none; color: var(--f-ink); }
 .foot a:hover { text-decoration: underline; text-decoration-color: var(--coral); text-decoration-thickness: 2px; text-underline-offset: 4px; }
