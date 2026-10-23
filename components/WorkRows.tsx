@@ -83,7 +83,7 @@ export function PersonalCards() {
               <Image src={p.image.src} alt="" fill sizes="(max-width: 860px) 45vw, 240px" style={{ objectFit: "cover", objectPosition: "top" }} />
               <span className="open">Open</span>
             </div>
-            <h5>{p.name}</h5>
+            <h3>{p.name}</h3>
             <p>{p.line}</p>
           </button>
         ))}

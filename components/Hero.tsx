@@ -5,13 +5,15 @@ import { useEffect, useRef, useState } from "react";
 import { startDrag, nextZ } from "./drag";
 import { pictureStickers, wordStickers } from "./stickerArt";
 
+// left/top place stickers on wider screens; mr/mt are phone positions (from the right edge),
+// picked to sit in the open space beside the headline, buttons and sticker book
 const starters = [
-  { text: "UI + UX", cls: "s-ink", left: "60%", top: "14%", rotate: "-6deg" },
-  { text: "Growth", cls: "s-peach", left: "74%", top: "30%", rotate: "5deg" },
-  { text: "A/B tests", cls: "s-mint", left: "63%", top: "50%", rotate: "-3deg" },
-  { text: "0 → 1", cls: "s-line", left: "80%", top: "58%", rotate: "8deg" },
-  { text: "Branding", cls: "s-lilac", left: "57%", top: "72%", rotate: "4deg" },
-  { text: "Prototyping", cls: "s-ink", left: "76%", top: "80%", rotate: "-5deg" },
+  { text: "UI + UX", cls: "s-ink", left: "60%", top: "14%", rotate: "-6deg", mr: "60px", mt: "22px" },
+  { text: "Growth", cls: "s-peach", left: "74%", top: "30%", rotate: "5deg", mr: "18px", mt: "70px" },
+  { text: "A/B tests", cls: "s-mint", left: "63%", top: "50%", rotate: "-3deg", mr: "100px", mt: "104px" },
+  { text: "0 → 1", cls: "s-line", left: "80%", top: "58%", rotate: "8deg", mr: "18px", mt: "110px" },
+  { text: "Branding", cls: "s-lilac", left: "57%", top: "72%", rotate: "4deg", mr: "18px", mt: "236px" },
+  { text: "Prototyping", cls: "s-ink", left: "76%", top: "80%", rotate: "-5deg", mr: "18px", mt: "320px" },
 ];
 
 type Added = { id: number; word?: [string, string]; pic?: string; left: number; top: number; rotate: number; z: number };
@@ -64,7 +66,8 @@ export default function Hero() {
       <p className="mono">Drag the stickers · open the book for more</p>
 
       {starters.map((s) => (
-        <span key={s.text} className={"sticker " + s.cls} style={{ left: s.left, top: s.top, rotate: s.rotate }}
+        <span key={s.text} className={"sticker starter " + s.cls}
+          style={{ left: s.left, top: s.top, rotate: s.rotate, "--mr": s.mr, "--mt": s.mt } as React.CSSProperties}
           onPointerDown={(e) => startDrag(e, hero.current)}>{s.text}</span>
       ))}
       {added.map((s) => s.word ? (

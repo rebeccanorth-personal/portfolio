@@ -48,7 +48,9 @@ export default function PolaroidDesk() {
     <>
       <div className="desk" ref={desk}>
         {travel.map((t) => (
-          <div key={t.src} className="polaroid" onPointerDown={(e) => startDrag(e, desk.current, () => setPhoto(t))}>
+          <div key={t.src} className="polaroid" role="button" tabIndex={0} aria-label={"Open photo: " + t.location}
+            onPointerDown={(e) => startDrag(e, desk.current, () => setPhoto(t))}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPhoto(t); } }}>
             <Image src={t.src} alt={t.location} width={264} height={264} sizes="132px" draggable={false} />
             <span>{t.location.split(",")[0]}</span>
           </div>

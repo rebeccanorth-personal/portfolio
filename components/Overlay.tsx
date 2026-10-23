@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 // Rendered into <body> so it sits above every section, including the footer. Fades in on open (CSS).
-// Esc, the Close button or a backdrop click closes it; the page behind can't scroll while it's open.
+// Esc, the Close button or a backdrop click closes it; Tab stays inside; the page behind can't scroll.
 export default function Overlay({
   open,
   onClose,
@@ -28,7 +28,17 @@ export default function Overlay({
     const root = document.documentElement;
     const prevOverflow = root.style.overflow;
     root.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") return onClose();
+      // Keep Tab inside the dialog
+      if (e.key !== "Tab") return;
+      const dialog = closeRef.current?.closest(".fx");
+      const items = dialog ? [...dialog.querySelectorAll<HTMLElement>("a[href], button, [tabindex]:not([tabindex='-1'])")] : [];
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);

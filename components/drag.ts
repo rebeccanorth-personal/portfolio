@@ -11,7 +11,7 @@ export function startDrag(e: React.PointerEvent<HTMLElement>, box: HTMLElement |
   const el = e.currentTarget;
   e.preventDefault();
   el.setPointerCapture(e.pointerId);
-  el.classList.add("dragging");
+  el.classList.add("dragging", "moved");
   el.style.zIndex = String(nextZ());
   const sx = e.clientX, sy = e.clientY, ox = el.offsetLeft, oy = el.offsetTop;
   let moved = false;
