@@ -17,11 +17,12 @@ export function ProfessionalRows() {
     <>
       <div className="dani">
         {professionalProjects.map((p, i) => {
-          const [a, b = a, c = a] = p.shots;
+          const [a, b = a, c] = p.shots;
           return (
             <div key={p.id} className={"drow" + (i % 2 ? " flip" : "")}>
               <button type="button" className="big" aria-label={p.name + ": open project"} onClick={() => setProject(p)}>
-                <span className="ph c"><Image src={c.src} alt="" fill sizes="(max-width: 760px) 50vw, 360px" /></span>
+                {/* The third frame only fans in on hover when there is a third screenshot */}
+                {c && <span className="ph c"><Image src={c.src} alt="" fill sizes="(max-width: 760px) 50vw, 360px" /></span>}
                 <span className="ph a"><Image src={a.src} alt="" fill sizes="(max-width: 760px) 70vw, 460px" /></span>
                 <span className="ph b"><Image src={b.src} alt="" fill sizes="(max-width: 760px) 40vw, 260px" /></span>
                 <span className="lbl">{p.name} <span>{p.category}</span></span>
