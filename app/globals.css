@@ -248,3 +248,19 @@ main.work .whead, main.work .wbody, main.play .whead, main.play .wbody { max-wid
 .contact-done { margin: 6px 0 0; font-size: 14px; }
 .contact-err { margin: 0; font-size: 13px; color: var(--coral); }
 @media (prefers-reduced-motion: reduce) { .contact-panel { animation: none; } }
+
+/* Currently: listening + reading, in About */
+.now { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.now-card { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border: 1px solid var(--f-line); border-radius: 10px; background: color-mix(in srgb, var(--f-card) 70%, transparent); text-decoration: none; transition: border-color .2s ease; }
+.now-card:hover { border-color: var(--coral); }
+.now-card .mono { display: block; font-size: 12px; line-height: 1.2; margin-bottom: 3px; }
+.now-card b { display: block; font-size: 14px; font-weight: 600; line-height: 1.2; color: var(--f-ink); }
+.now-card b span { font-weight: 400; color: var(--f-muted); }
+.bars { display: flex; align-items: flex-end; gap: 2px; width: 20px; height: 20px; }
+.bars i { width: 3px; min-height: 3px; border-radius: 2px; background: var(--coral); animation: bar .7s ease-in-out infinite alternate; }
+.bars i:nth-child(2) { animation-delay: .16s; } .bars i:nth-child(3) { animation-delay: .32s; } .bars i:nth-child(4) { animation-delay: .48s; }
+@keyframes bar { from { height: 4px; } to { height: 20px; } }
+.lines { display: grid; gap: 4px; width: 20px; }
+.lines i { height: 2px; border-radius: 2px; background: var(--lilac); }
+.lines i:nth-child(2) { width: 80%; } .lines i:nth-child(3) { width: 60%; }
+@media (prefers-reduced-motion: reduce) { .bars i { animation: none; height: 12px; } }
