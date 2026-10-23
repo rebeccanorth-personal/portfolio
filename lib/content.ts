@@ -143,9 +143,9 @@ export const professionalProjects: Project[] = [
       { step: "Launch", desc: "Shipped to alexrussacts.com, now his main casting and networking tool." },
     ],
     shots: [
-      { src: "/projects/alexruss-2.png", caption: "Showcase & reels" },
       { src: "/projects/alexruss-3.png", caption: "Headshots" },
       { src: "/projects/alexruss-1.png", caption: "Homepage: about" },
+      { src: "/projects/alexruss-2.png", caption: "Showcase & reels" },
     ],
     link: "https://alexrussacts.com",
   },
