@@ -212,7 +212,7 @@ export const personalProjects = [
     github: "https://github.com/rebeccanorth-personal/lolla-schedule",
     image: { src: "/projects/lolla.jpg", caption: "Thursday lineup with a crew's picks" },
   },
-{
+  {
     name: "plan-my-week",
     tagline: "Weekly calendar automation for macOS",
     line: "Plans your week into Apple Calendar every Sunday.",
