@@ -19,14 +19,14 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rebeccanorth.me"),
+  metadataBase: new URL("https://www.rebeccanorth.me"),
   title: "Rebecca North — Growth PM, Designer, Builder",
   description:
     "UX PM who thinks like a designer. Six years on growth at Microsoft. Cornell Information Science.",
   openGraph: {
     title: "Rebecca North — Growth PM. Designer. Builder.",
     description: "A PM who thinks like a designer. See my work, play with the stickers, say hi.",
-    url: "https://rebeccanorth.me",
+    url: "https://www.rebeccanorth.me",
     siteName: "Rebecca North",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
