@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { startDrag, nextZ } from "./drag";
 import { pictureStickers, wordStickers } from "./stickerArt";
 
@@ -21,6 +21,20 @@ export default function Hero() {
   const [open, setOpen] = useState(false);
   const [added, setAdded] = useState<Added[]>([]);
   const nextId = useRef(0);
+  const book = useRef<HTMLDivElement>(null);
+
+  // Close the sticker book on any click outside it, or on Esc
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => { if (!book.current?.contains(e.target as Node)) setOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   // New stickers land on the right half, clear of the headline
   function add(sticker: { word?: [string, string]; pic?: string }) {
@@ -61,7 +75,7 @@ export default function Hero() {
           onPointerDown={(e) => startDrag(e, hero.current)} dangerouslySetInnerHTML={{ __html: pictureStickers[s.pic!] }} />
       ))}
 
-      <div className="sbook" data-open={open}>
+      <div className="sbook" data-open={open} ref={book}>
         <button type="button" className="sbook-toggle" aria-expanded={open} aria-controls="sticker-spread" onClick={() => setOpen(!open)}>
           <span className="cov" aria-hidden="true" />Sticker book <span className="chev" aria-hidden="true">▾</span>
         </button>
