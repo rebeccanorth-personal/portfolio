@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Runs before paint so the saved or system theme never flashes the wrong colors
-const themeScript = `try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}`;
+// Light by default; dark only if the visitor chose it with the toggle. Runs before paint so it never flashes.
+const themeScript = `try{document.documentElement.dataset.theme=localStorage.getItem("theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
